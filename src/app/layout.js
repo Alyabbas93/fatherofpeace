@@ -29,7 +29,7 @@ export default function RootLayout({ children }) {
         <div className="flex h-screen">
         <SidebarProvider>
       <AppSidebar/>
-      <main className="w-[100%]">
+      <main className="w-[100%] bg-[#F8F8F8]">
         <div className="flex">
         <SidebarTrigger />
         <Header/>
