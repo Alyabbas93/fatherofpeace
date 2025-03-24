@@ -20,7 +20,7 @@ export default function Contactcard() {
       {contacts.map((contact, index) => (
         <div key={index} className="flex items-center justify-between py-2 border-b last:border-b-0">
           <div className="flex items-center gap-3">
-            <div className="w-10 h-10 bg-gray-300 rounded-full"></div>
+            <div className="bg-gray-300  w-8 h-8 flex items-center justify-center rounded-full"></div>
             <div>
               <p className="text-sm font-medium">{contact}</p>
               <p className="text-xs text-gray-500">Send 10 blessings</p>

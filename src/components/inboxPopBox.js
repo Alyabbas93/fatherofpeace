@@ -38,7 +38,7 @@ const InboxPopover = () => {
         <Mail className="text-gray-600 cursor-pointer hover:text-black" size={20} />
       </PopoverTrigger>
 
-      <PopoverContent className="w-80 bg-white shadow-md rounded-lg p-4">
+      <PopoverContent className="w-80 bg-white m-4 shadow-md rounded-lg p-4">
         <div className="flex items-center justify-between mb-3">
           <h3 className="text-lg font-semibold">Inbox</h3>
           {inboxCount > 0 && (

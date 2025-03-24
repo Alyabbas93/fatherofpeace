@@ -68,7 +68,7 @@ export function AppSidebar() {
 
   return (
     <Sidebar className="h-screen bg-[#ffffff]" collapsible="icon">
-      <SidebarHeader className="flex items-center justify-between p-4">
+      <SidebarHeader className="flex   p-4">
         <SidebarContent className="text-lg font-semibold group-data-[collapsible=icon]:hidden">
           FAMILY FEDERATION
         </SidebarContent>
