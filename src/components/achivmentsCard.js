@@ -8,10 +8,10 @@ const achievementsData = [
   { id: 3, title: "Discussion Leader", description: "Create 3 group discussions", progress: 5, total: 10, icon: <MessageCircle size={16} /> },
   { id: 4, title: "Blessing Giver", description: "Send 10 blessings", progress: 4, total: 10, icon: <Heart size={16} /> },
   { id: 5, title: "New Achievement", description: "Unlock new levels", progress: 2, total: 10, icon: <Heart size={16} /> },
-  { id: 6, title: "Explorer", description: "Visit 50 pages", progress: 25, total: 50, icon: <Search size={16} /> },
+  { id: 6, title: "Explorer", description: "Visit 50 pages", progress: 25, total: 10, icon: <Search size={16} /> },
   { id: 7, title: "Connector", description: "Connect with 10 people", progress: 7, total: 10, icon: <MessageCircle size={16} /> },
-  { id: 8, title: "Super Sharer", description: "Share 20 quotes", progress: 15, total: 20, icon: <Share2 size={16} /> },
-  { id: 9, title: "Kind Heart", description: "Send 50 blessings", progress: 30, total: 50, icon: <Heart size={16} /> },
+  { id: 8, title: "Super Sharer", description: "Share 20 quotes", progress: 5, total: 10, icon: <Share2 size={16} /> },
+  { id: 9, title: "Kind Heart", description: "Send 50 blessings", progress: 3, total: 10, icon: <Heart size={16} /> },
 ];
 
 const AchievementsCard = () => {
@@ -30,10 +30,24 @@ const AchievementsCard = () => {
                 {icon}
               </div>
 
-              <div className="flex-1">
+              <div className="flex-1 ">
+                <div className="flex  justify-between text-xs">
+                <div>
                 <p className="text-sm font-semibold">{title}</p>
                 <p className="text-xs text-gray-500">{description}</p>
-
+                </div>
+                <div className="flex items-center gap-1 text-xs">
+                {isCompleted ? (
+                <button className="bg-[#5E8DE5] text-white text-xs px-3 py-1 rounded-full">
+                  Complete
+                </button>
+              ) : (
+                <p className="text-xs place-self-end text-gray-500 min-w-[40px] text-right">
+                  {progress}/{total}
+                </p>
+              )}
+                </div>
+                </div>
                 {total > 1 && (
                   <div className="relative w-full h-1.5 bg-gray-300 rounded-full mt-1">
                     <div
@@ -42,17 +56,10 @@ const AchievementsCard = () => {
                     ></div>
                   </div>
                 )}
+                
               </div>
 
-              {isCompleted ? (
-                <button className="bg-[#5E8DE5] text-white text-xs px-3 py-1 rounded-full">
-                  Complete
-                </button>
-              ) : (
-                <p className="text-xs text-gray-500 min-w-[40px] text-right">
-                  {progress}/{total}
-                </p>
-              )}
+          
             </div>
           );
         })}
