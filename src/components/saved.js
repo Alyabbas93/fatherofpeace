@@ -19,7 +19,7 @@ const SavedCard = () => {
             {SavedData.map((search, index) => (
               <div key={index} className="flex items-center w-full gap-2 text-gray-700">
                 <Calendar size={16} className="text-gray-500" />
-                <span className="text-sm">{search}</span>
+                <span className="text-sm text-[#28303F] text-base">{search}</span>
               </div>
             ))}
           </div>

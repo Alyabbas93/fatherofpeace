@@ -2,7 +2,7 @@ import React from "react";
 
 const AccountSecurity = () => {
   return (
-    <div className=" border rounded-lg  ">
+    <div className=" border bg-white p-6 rounded-lg  ">
       <h2 className="text-lg font-semibold mb-4">Account Security</h2>
       <div className="flex flex-col gap-4">
         <label className="flex flex-col text-gray-600">
