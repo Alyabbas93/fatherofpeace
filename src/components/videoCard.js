@@ -35,7 +35,7 @@ export default function VideoCard() {
           <div className="animate-spin h-8 w-8 border-4 border-gray-500 border-t-transparent rounded-full"></div>
         ) : (
           <video className=" h-full w-full rounded-lg" controls>
-            <source src={video.videoUrl} type="video/mp4" />
+            <source src={video.videoUrl} type="video/mp4" className="object-cover" />
             Your browser does not support the video tag.
           </video>
         )}

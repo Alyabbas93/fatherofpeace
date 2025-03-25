@@ -1,11 +1,14 @@
-import React from "react";
+'use client'
+import React, { useEffect, useState } from "react";
 import { Input } from "@/components/ui/input";
 import { Search} from "lucide-react";
-import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 import NotificationPopover from "./notifications";
 import InboxPopover from "./inboxPopBox";
+import ProfilePopper from "./profilePopBox";
 
 const Header = () => {
+  
+
   return (
     <header className="w-full bg-[#EAEAEA] g-20px px-4 py-2 flex items-center justify-between">
       <div className="relative bg-[#ffffff] w-1/3 max-w-sm  rounded-md">
@@ -18,11 +21,8 @@ const Header = () => {
 
              <NotificationPopover/> 
         
-
-        <Avatar className="cursor-pointer">
-          <AvatarImage src="https://randomuser.me/api/portraits/men/1.jpg" alt="User" />
-          <AvatarFallback>U</AvatarFallback>
-        </Avatar>
+             <ProfilePopper/>
+        
       </div>
     </header>
   );
