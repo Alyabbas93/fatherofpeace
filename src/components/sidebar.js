@@ -35,9 +35,9 @@ export function AppSidebar() {
       url: "/achievements",
       icon: <Trophy className="mr-3 h-5 w-5" />,
       subLinks: [
-        { name: "All Achievements", url: "/allAchievements" },
-        { name: "Monthly Challenges", url: "/monthlyChallenges" },
-        { name: "Leaderboard", url: "/leaderboard" },
+        { name: "All Achievements", url: "/achievements/allAchievements" },
+        { name: "Monthly Challenges", url: "/achievements/monthlyChallenges" },
+        { name: "Leaderboard", url: "/achievements/leaderboard" },
       ],
     },
     {
