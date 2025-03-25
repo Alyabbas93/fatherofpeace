@@ -4,11 +4,11 @@ import { Progress } from '@/components/ui/progress'
 const AchievementCards2 = ({ achievementData }) => {
   return (
     <>
-       <div className="grid grid-cols-1 smallachievementsallachievements:grid-cols-2 lg:grid-cols-3 gap-3 w-[100%]">
+       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 w-[100%]">
           {achievementData.map((item, index) => (
             <div
               key={index}
-              className="flex flex-col bg-white p-3 rounded-md gap-3"
+              className="flex flex-col bg-white p-3 rounded-[12px] border border-[rgba(40,48,63,0.08)] gap-3"
             >
               {/* Top Section: Icon and Status Badge */}
               <div className="flex justify-between items-start">
