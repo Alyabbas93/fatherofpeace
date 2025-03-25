@@ -1,8 +1,35 @@
 import { Progress } from "../../components/ui/progress";
-import StreakAchievement from "../../components/streakAchievement";
 // import { Progress } from '@/components/ui/progress'
 import React from "react";
 import Image from "next/image";
+import StreakAchievement from "@/components/achievements/streakAchievement";
+import AchievementCards2 from "@/components/achievements/achievementCards2";
+import AchievementCard1 from "@/components/achievements/achievementCardD";
+// import AchievementCards2 from "@//achievementCards2";
+
+const achievementData = [
+  {
+    title: "Mediation Master",
+    description: "Complete 30 Meditations",
+    completed: 25,
+    total: 30,
+    points: 75,
+  },
+  {
+    title: "Blessing Giver",
+    description: "Send 10 blessings",
+    completed: 6,
+    total: 10,
+    points: 75,
+  },
+  {
+    title: "Knowledge Seeker",
+    description: "Search for 20 different topics",
+    completed: 15,
+    total: 20,
+    points: 75,
+  },
+];
 
 const dataVlaue = [
   {
@@ -34,7 +61,7 @@ const Achievements = () => {
   const progressValue = (currentPoints / maxPoints) * 100;
 
   return (
-    <main className="flex flex-col items-center p-10 w-full">
+    <main className="flex flex-col items-center p-6 w-full">
       <div className="flex flex-col gap-9 w-full">
         {/* title  */}
         <div>
@@ -107,16 +134,16 @@ const Achievements = () => {
           </div>
 
           {/* 3rd component almost there */}
-          <div className="flex p-5 rounded-[12px] border border-[rgba(217,217,217,0.10)] bg-[#28303F] ">
+          <div className="flex w-full flex-col gap-8 p-5 rounded-[12px] border border-[rgba(217,217,217,0.10)] bg-[#28303F] ">
             {/* for title  */}
             <div className="flex gap-2 ">
               {/* for logo  */}
-              <div className="pt-1">
+              <div className="pt-2">
                 <Image
                   src="/assets/achievements/star.png"
                   alt="Star Achievement"
-                  width={30}
-                  height={30}
+                  width={25}
+                  height={25}
                 />
               </div>
               {/* for title  */}
@@ -129,10 +156,10 @@ const Achievements = () => {
                 </p>
               </div>
             </div>
-            <div>
-
-
-              
+            {/* cards area d */}
+            <div className="flex w-full">
+             
+           <AchievementCards2 achievementData={achievementData}/>
             </div>
           </div>
         </div>

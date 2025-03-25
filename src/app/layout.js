@@ -26,10 +26,10 @@ export default function RootLayout({ children }) {
        <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <div className="flex h-screen">
+        <div className="flex bg-[#f8f8f8]">
         <SidebarProvider>
       <AppSidebar/>
-      <main className="w-[100%] bg-[#F8F8F8]">
+      <main className="w-[100%]">
         <div className="flex">
         <SidebarTrigger />
         <Header/>
