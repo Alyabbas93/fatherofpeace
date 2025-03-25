@@ -16,16 +16,18 @@ const userData = {
 };
 
 const ProfileCard = () => {
+  const storedImage = localStorage.getItem("profileImage");
+
   return (
     
-    <div className=" mx-auto mb-9   py-5 ">
+    <div className=" mx-auto mb-9 py-5 ">
 <h1 className="text-xl font-semibold text-[#1E2535] mb-4 self-start">
         Your Profile
       </h1>
       <div className="flex items-center gap-4">
       <div className="w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 place-self-start border-2 border-yellow-400 rounded-full overflow-hidden flex-shrink-0">
   <img
-    src="https://via.placeholder.com/150"
+    src={storedImage}
     alt="Profile"
     className="w-full h-full object-cover"
   />

@@ -17,7 +17,7 @@ const FamilyValues = () => {
   ];
 
   return (
-    <div className="  p-4 bg-red-100 rounded-lg shadow-md">
+    <div className="  p-4 bg-[#ffffff] border rounded-lg ">
       <h2 className="text-lg font-semibold">True Mother</h2>
       <p className="text-sm text-gray-600">Here are teachings from Dr. Hak Ja Han Moon about family values:</p>
       
