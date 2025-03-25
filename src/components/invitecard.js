@@ -12,7 +12,7 @@ export default function InviteFriends() {
   const handleCopy = () => {
     navigator.clipboard.writeText(inviteLink);
     setCopied(true);
-    setTimeout(() => setCopied(false), 2000); // Reset after 2 seconds
+    setTimeout(() => setCopied(false), 2000); 
   };
 
   return (

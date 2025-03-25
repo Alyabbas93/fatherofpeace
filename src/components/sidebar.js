@@ -54,10 +54,10 @@ export function AppSidebar() {
 
   const handleClick = (item) => {
     if (item.subLinks) {
-      setOpenItems((prev) => ({ ...prev, [item.name]: !prev[item.name] })); // Toggle submenu
+      setOpenItems((prev) => ({ ...prev, [item.name]: !prev[item.name] })); 
     }
     if (item.url) {
-      router.push(item.url); // Navigate to the page
+      router.push(item.url); 
     }
   };
 
