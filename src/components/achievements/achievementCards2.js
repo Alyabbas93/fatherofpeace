@@ -22,6 +22,7 @@ const AchievementCards2 = ({ achievementData }) => {
                 </span>
 
                 {/* Status Badge */}
+                {item.status && (
                 <span
                   className={`text-sm font-medium px-2 py-1 rounded-full ${
                     item.status === "Completed"
@@ -31,6 +32,7 @@ const AchievementCards2 = ({ achievementData }) => {
                 >
                   {item.status}
                 </span>
+                )}
               </div>
 
               {/* Middle Section: Title and Description */}
