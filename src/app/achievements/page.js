@@ -65,7 +65,7 @@ const Achievements = () => {
       <div className="flex flex-col gap-9 w-full">
         {/* title  */}
         <div>
-          <h1 className="text-[#28303F] font-readexpro text-[40px] font-semibold leading-normal">
+          <h1 className="text-[#28303F] font-readexpro text-3xl lg:text-[40px] font-semibold leading-normal">
             Your Achievements
           </h1>
         </div>
@@ -77,7 +77,7 @@ const Achievements = () => {
           </div>
 
           {/* 2nd component level progress comp  */}
-          <div className=" flex flex-col gap-8 p-5 rounded-[12px] border border-[rgba(217,217,217,0.10)] bg-white">
+          <div className=" flex flex-col gap-8 p-3 lg:p-5 rounded-[12px] border border-[rgba(217,217,217,0.10)] bg-white">
             {/* title section  */}
             <div className="flex flex-col">
               <h1 className="text-[#28303F] font-[Readex Pro] text-[28px] font-medium leading-normal">
@@ -93,19 +93,19 @@ const Achievements = () => {
               {/* headings  */}
               <div className="flex justify-between">
                 <div className="flex items-center gap-2">
-                  <h1 className="text-[#28303F] font-[Readex Pro] text-[28px] font-medium">
+                  <h1 className="text-[#28303F] font-[Readex Pro] text-2xl lg:text-[28px] font-medium">
                     8
                   </h1>
-                  <p className="text-[#28303F] font-[Readex Pro] text-[20px] font-medium">
+                  <p className="text-[#28303F] font-[Readex Pro] text-sm lg:text-[20px] font-medium">
                     Peace Ambassador
                   </p>
                 </div>
                 <div className="flex gap-2 items-center">
-                  <p className="text-[#5E8DE5] font-[Readex Pro] text-[24px] font-normal leading-normal">
+                  <p className="text-[#5E8DE5] font-[Readex Pro] text-sm lg:text-[24px] font-normal leading-normal">
                     {currentPoints}{" "}
                     <span className="text-[#828282]"> /{maxPoints}</span>
                   </p>
-                  <h1 className="text-[#28303F] font-[Readex Pro] text-[28px] font-medium">
+                  <h1 className="text-[#28303F] font-[Readex Pro] text-2xl lg:text-[28px] font-medium">
                     9
                   </h1>
                 </div>
@@ -116,16 +116,16 @@ const Achievements = () => {
               </div>
             </div>
             {/* values sents  */}
-            <div className="flex gap-6 justify-around mb-10">
+            <div className="flex flex-wrap gap-6 justify-around mb-10">
               {dataVlaue.map((values) => (
                 <div
                   key={values.value}
                   className="flex  flex-col justify-center items-center "
                 >
-                  <h1 className="text-[#28303F] font-readex-pro text-[36px] font-normal leading-normal">
+                  <h1 className="text-[#28303F] font-readex-pro text-2xl lg:text-[36px] font-normal leading-normal">
                     {values.value}
                   </h1>
-                  <p className="text-[#828282] font-readex-pro text-[24px] font-normal leading-normal">
+                  <p className="text-[#828282] font-readex-pro text-lg lg:text-[24px] font-normal leading-normal">
                     {values.text}
                   </p>
                 </div>
