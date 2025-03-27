@@ -1,7 +1,9 @@
 import { Avatar } from '@radix-ui/react-avatar';
-import { EllipsisVertical, HeartCrackIcon, MessageCircle } from 'lucide-react';
+import { EllipsisVertical, Heart, HeartCrackIcon, MessageCircle, MessageCircleMore, Plus } from 'lucide-react';
 import Image from 'next/image';
+import Link from 'next/link';
 import React from 'react'
+import { Button } from '../ui/button';
 
 const FriendCard = ({ 
     name, 
@@ -9,19 +11,21 @@ const FriendCard = ({
     role, 
     level, 
     points,
-    avatarSrc 
+    avatarSrc, 
+    pin,
+    dots
   }) => {
     return (
-      <div className="flex flex-col gap-5 justify-between border border-[rgba(40,48,63,0.08)] rounded-xl px-1 lg:px-4 py-2 mb-3 w-[363px] h-[191px] flex-shrink-0">
+      <div className="flex flex-col px-1 lg:px-3 py-5   gap-4 justify-between border border-[rgba(40,48,63,0.08)] bg-white w-full rounded-xl  h-[191px] flex-shrink-0">
         <div className="flex lg:gap-4 w-full">
-          <div className="w-20 h-15">
-            <Avatar className="relative w-9 h-9 lg:w-full lg:h-full">
-              <Image
+          <div className="w-20 h-15 flex justify-center">
+            <Avatar className="relative ">
+            <Image
                 src={avatarSrc}
-                alt={`${name}'s avatar`}
-                width={15}
-                height={15}
-                className="rounded-full object-cover w-full h-full"
+                alt="@shadcn"
+                width={60}
+                height={60}
+                className="rounded-full"
               />
             </Avatar>
           </div>
@@ -31,9 +35,21 @@ const FriendCard = ({
               <h3 className="text-[#28303F] text-sm lg:text-2xl font-medium truncate max-w-[120px] lg:max-w-none">
                 {name}
               </h3>
-              <p className="text-xs lg:text-[10px] text-gray-500">
-                Active {lastActive}
-              </p>
+
+              <div className=''>
+                {lastActive && (
+                  <p className="text-xs lg:text-[10px] text-gray-500">
+                    Active {lastActive}
+                  </p>
+                )}
+                { pin && (
+                  <div className='flex gap-5'>
+                    <Image className='cursor-pointer rounded-full  ' src={pin} alt="pin" width={25} height={25} />
+
+                    <Image className='cursor-pointer rounded-full  ' src={dots} alt="dots" width={25} height={25} />
+                  </div>
+                )}
+              </div>
             </div>
 
             <p className="text-[#828282] text-xs lg:text-[16px] font-normal mt-1">
@@ -53,27 +69,114 @@ const FriendCard = ({
           </div>
         </div>
         <hr />
-        <div className="flex items-center justify-between gap-2 w-full ">
-          {/* Message Button - 48% width (accounts for gap) */}
-          <div className="flex flex-2 items-center rounded-[7px] border border-[#28303F] px-4 py-2 gap-3">
-            <MessageCircle className="w-4 h-4" />
-            <p className="text-[#28303F] font-[Readex_Pro] text-[12px] font-normal leading-normal">Message</p>
-          </div>
 
-          {/* Blessing Button - 48% width (accounts for gap) */}
-          <div className="flex flex-2 items-center rounded-[7px] border border-[#28303F] px-4 py-2 gap-2">
-            <HeartCrackIcon className="w-4 h-4" />
-            <p className="text-[#28303F] font-[Readex_Pro] text-[12px] font-normal leading-normal ">Send a blessing</p>
+
+        <div className="flex items-center justify-between gap-2 w-full ">
+          {/* wann die Active ist online  */}
+          { lastActive && (
+
+            <>
+           <div className="flex gap-2 flex-wrap sm:flex-nowrap ">
+          <Button className="flex items-center md:justify-start justify-center gap-1 border w-full border-[#28303F] text-[12px] px-2 md:px-3 sm:w-[9rem] bg-transparent text-[#28303F] hover:bg-gray-100">
+          <Image className='cursor-pointer rounded-full  ' src="/assets/social/chat02.svg" alt="pin" width={16} height={16} />
+          Message
+          </Button>
+          <Button className="flex items-center md:justify-start justify-center border gap-1 w-full border-[#28303F] text-[12px] px-2 md:px-3 sm:w-[9rem] bg-transparent text-[#28303F] hover:bg-gray-100">
+          <Image className='cursor-pointer rounded-full  ' src="/assets/social/loveGray.svg" alt="pin" width={16} height={16} />
+          Send a blessing
+          </Button>
+        </div>
+          </>
+          )}
+
+            {/* wann die pin ist in der props  */}
+          { pin && (
+            <div className="flex items-center w-full sm:justify-between flex-wrap-reverse sm:flex-nowrap gap-2">
+            <div className="flex items-center justify-end sm:justify-start">
+              <div className="relative w-10 h-10 flex  pr-20 ">
+                <Image
+                  src="/assets/achievements/Ellipse16.svg"
+                  alt="Mutual Friend"
+                  width={40}
+                  height={40}
+                  className="rounded-full object-cover left-12 absolute border-[2px] border-white"
+                />
+                <Image
+                  src="/assets/achievements/Ellipse16.svg"
+                  alt="Mutual Friend"
+                  width={39.5}
+                  height={39.5}
+                  className="rounded-full object-cover left-8 absolute border-[2px] border-white"
+                />
+                <Image
+                  src="/assets/achievements/Ellipse16.svg"
+                  alt="Mutual Friend"
+                  width={39.3}
+                  height={39.3}
+                  className="rounded-full object-cover left-4 absolute border-[2px] border-white"
+                />
+                <Image
+                  src="/assets/achievements/Ellipse16.svg"
+                  alt="Mutual Friend"
+                  width={39}
+                  height={39}
+                  className="rounded-full object-cover left-0 absolute border-[2px] border-white"
+                />
+              </div>
+              <div>
+                <Button className="flex gap-0.5 text-[#828282] text-[14px] bg-transparent hover:text-black hover:bg-transparent">
+                  <Plus
+                    size={18}
+                    strokeWidth={2}
+                    className="text-[#828282] hover:text-black"
+                  />
+                  <p> 15 mutual</p>
+                </Button>
+              </div>
+            </div>
+            <div className="flex sm:gap-6 justify-between sm:justify-end items-center w-full">
+            <Image className='cursor-pointer rounded-full  ' src="/assets/social/love.svg" alt="pin" width={25} height={25} />
+              <Button className="flex items-center border border-[#28303F] text-[12px] text-[#28303F] bg-transparent hover:bg-gray-100">
+                <Plus size={20} strokeWidth={2} className="text-[#28303F]" />
+                Send add request
+              </Button>
+            </div>
           </div>
+          )}
+          {/* Message Button - 48% width (accounts for gap) */}
+       
 
           {/* Overflow Menu - Fixed small width */}
-          <div className="flex items-center justify-center w-10 h-10 rounded-full hover:bg-gray-100">
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-            <path d="M14 12C14 13.1046 13.1046 14 12 14C10.8954 14 10 13.1046 10 12C10 10.8954 10.8954 10 12 10C13.1046 10 14 10.8954 14 12Z" stroke="#28303F" stroke-width="1.5"/>
-            <path d="M14 4C14 5.10457 13.1046 6 12 6C10.8954 6 10 5.10457 10 4C10 2.89543 10.8954 2 12 2C13.1046 2 14 2.89543 14 4Z" stroke="#28303F" stroke-width="1.5"/>
-            <path d="M14 20C14 21.1046 13.1046 22 12 22C10.8954 22 10 21.1046 10 20C10 18.8954 10.8954 18 12 18C13.1046 18 14 18.8954 14 20Z" stroke="#28303F" stroke-width="1.5"/>
-          </svg>
-          </div>
+         { lastActive && (
+          <Link
+            href="#"
+            className="flex items-center justify-center w-10 h-10 rounded-full hover:bg-gray-100"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+            >
+              <path
+                d="M14 12C14 13.1046 13.1046 14 12 14C10.8954 14 10 13.1046 10 12C10 10.8954 10.8954 10 12 10C13.1046 10 14 10.8954 14 12Z"
+                stroke="#28303F"
+                stroke-width="1.5"
+              />
+              <path
+                d="M14 4C14 5.10457 13.1046 6 12 6C10.8954 6 10 5.10457 10 4C10 2.89543 10.8954 2 12 2C13.1046 2 14 2.89543 14 4Z"
+                stroke="#28303F"
+                stroke-width="1.5"
+              />
+              <path
+                d="M14 20C14 21.1046 13.1046 22 12 22C10.8954 22 10 21.1046 10 20C10 18.8954 10.8954 18 12 18C13.1046 18 14 18.8954 14 20Z"
+                stroke="#28303F"
+                stroke-width="1.5"
+              />
+            </svg>
+          </Link>
+  )}
         </div>
       </div>
     );
