@@ -1,3 +1,5 @@
+
+
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 
@@ -22,15 +24,15 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
        <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <div className="flex bg-[#f8f8f8]">
         <SidebarProvider>
       <AppSidebar/>
-      <main className="w-[100%]">
-        <div className="flex">
+      <main className="w-full">
+        <div className="flex items-center">
         <SidebarTrigger />
         <Header/>
         </div>

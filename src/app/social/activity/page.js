@@ -32,10 +32,7 @@ const Activity = () => {
 
           
           <SocialLayout>
-        <div className="rounded-[12px] flex  justify-between  gap-4 lg:gap-8 ">
-          {/* first dev  */}
-          <FriendsContent/>  
-        </div>
+     
         </SocialLayout>
         
           

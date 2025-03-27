@@ -5,7 +5,7 @@ import InviteFriends from '../invitecard'
 
 const SocialRight = () => {
   return (
-    <div className='flex flex-col gap-2 xl:max-w-[24rem] md:min-w-[22rem] w-full'>
+    <div className='flex flex-col gap-2 xl:max-w-[24rem] md:min-w-[22rem]'>
         <FriendRequests/>
         <SuggTribes/>
         <InviteFriends/>
