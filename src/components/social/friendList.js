@@ -2,6 +2,7 @@ import { UserRound } from "lucide-react";
 import Image from "next/image";
 import React from "react";
 import FriendCard from "./friendCard";
+import Link from "next/link";
 
 const dummyFriends = [
   {
@@ -42,7 +43,7 @@ const dummyFriends = [
 
 const FriendList = () => {
   return (
-    <main className="border-[rgba(217,217,217,0.10)] bg-white">
+    <main className="border-[rgba(217,217,217,0.10)] border">
       <div className="bg-white p-6 rounded-[12px] flex flex-col gap-8">
         {/* title  */}
         <div className="flex justify-between">
@@ -51,7 +52,7 @@ const FriendList = () => {
 
             <div className="flex justify-center items-center gap-3">
               {/* <UserRound /> */}
-              <Image src="/assets/social/user.svg" width={25} height={25} />
+              <Image src="/assets/social/user.svg" alt="user" width={25} height={25} />
               <h1 className="text-[#28303F] font-readex-pro text-[28px] font-medium leading-normal">
                 Friends List
               </h1>
@@ -63,13 +64,10 @@ const FriendList = () => {
           </div>
 
           {/* buton  */}
-          <div className="flex items-center justify-center w-10 h-10 rounded-full hover:bg-gray-100">
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-            <path d="M14 12C14 13.1046 13.1046 14 12 14C10.8954 14 10 13.1046 10 12C10 10.8954 10.8954 10 12 10C13.1046 10 14 10.8954 14 12Z" stroke="#28303F" stroke-width="1.5"/>
-            <path d="M14 4C14 5.10457 13.1046 6 12 6C10.8954 6 10 5.10457 10 4C10 2.89543 10.8954 2 12 2C13.1046 2 14 2.89543 14 4Z" stroke="#28303F" stroke-width="1.5"/>
-            <path d="M14 20C14 21.1046 13.1046 22 12 22C10.8954 22 10 21.1046 10 20C10 18.8954 10.8954 18 12 18C13.1046 18 14 18.8954 14 20Z" stroke="#28303F" stroke-width="1.5"/>
-          </svg>
-          </div>
+          <Link href="#" className="flex items-center justify-center w-10 h-10 rounded-full hover:bg-gray-100">
+             <Image className='cursor-pointer rounded-full  ' src="/assets/social/more-verticalDark.svg" alt="pin" width={25} height={25} />
+          
+          </Link>
         </div>
         {/* cards cont */}
         <div className="flex justify-between">

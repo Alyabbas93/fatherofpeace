@@ -31,7 +31,7 @@ export function AppSidebar() {
     { name: "Ask True Mother", url: "/askTrueMother", icon: <MessageCircle className="mr-3 h-5 w-5" /> },
     { 
       name: "Social",
-      url: "/social",
+      url: "#",
       icon: <Home className="mr-3 h-5 w-5" />,
       subLinks:[
         { name: "Friends", url: "/social/friends" },
