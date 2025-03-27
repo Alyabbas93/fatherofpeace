@@ -8,10 +8,11 @@ import { Button } from "@/components/ui/button";
 import { Plus } from "lucide-react";
 import React from "react";
 import SocialLayout from "../socialLayout";
+import FriendsContent from "@/components/social/friendsContent";
 
 const Activity = () => {
   return (
-    <SocialLayout>
+   
     <main className="flex flex-col items-center p-3 lg:p-6 w-full">
       <div className="flex flex-col gap-9 w-full">
         {/* title  */}
@@ -30,23 +31,19 @@ const Activity = () => {
           {/* first dev  */}
 
           
-          <div className="w-[90%] flex  flex-col gap-8">
-            
-            <FriendList />
-          
-            <div>
-              <PeopleUmN />
-            </div>
-
-
-          </div>
+          <SocialLayout>
+        <div className="rounded-[12px] flex  justify-between  gap-4 lg:gap-8 ">
+          {/* first dev  */}
+          <FriendsContent/>  
+        </div>
+        </SocialLayout>
         
           
       
         </div>
       </div>
     </main>
-    </SocialLayout>
+   
   )
 }
 
