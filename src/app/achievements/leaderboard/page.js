@@ -10,7 +10,7 @@ const leaderboardData = [
     title: "Champion",
     level: 10,
     points: 1500,
-    image2: "/assets/achievements/achivement.svg",
+    image2: "/assets/achievements/achivement 1.svg",
   },
   {
     id: 2,
