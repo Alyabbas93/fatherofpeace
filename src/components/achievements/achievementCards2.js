@@ -15,7 +15,7 @@ const AchievementCards2 = ({ achievementData }) => {
                 {/* Icon */}
                 <span className="w-9 h-9">
                   <img
-                    src="/assets/achievements/chatting.png"
+                    src="/assets/achievements/chatting.svg"
                     className="bg-[#D9D9D9] rounded-full p-[4.2px] w-auto h-auto"
                     alt="chatting"
                   />

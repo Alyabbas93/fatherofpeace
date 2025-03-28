@@ -4,7 +4,7 @@ import React from 'react'
 const SocialLayout = ({children}) => {
   return (
     <div className="lg:px-0 md:lg:px-0 px-2 py-0 w-full">
-      <div className="xl:flex xl:gap-6 xl:justify-between ">
+      <div className="xl:flex flex flex-col md:flex-row gap-3 xl:gap-6 xl:justify-between ">
         <div className="w-full">{children}</div>
         <SocialRight/>
       </div>

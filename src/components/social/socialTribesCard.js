@@ -10,7 +10,7 @@ const dummyFriends = [
     {
       id: 1,
       name: "Peace Builders",
-      status: "Active",
+      status: "Admin",
       members: "28 members",
       level: 8,
       desc:"A group dedicated to sharing and discussing True Mother's on peace",
@@ -20,7 +20,7 @@ const dummyFriends = [
     {
       id: 2,
       name: "Family Values ",
-      status: "Active",
+      status: "Admin",
       members: "42 members",
       level: 12,
       desc:"Exploring True Mother's wisdom on family and relationship",
@@ -29,7 +29,7 @@ const dummyFriends = [
     {
       id: 3,
       name: "Youth Leadership ",
-      status: "Active",
+      status: "Admin",
       members: "15 members",
       level: 5,
       desc:"Young leaders inspired by True Mother's vision",
@@ -65,22 +65,33 @@ const SocialTribesCard = () => {
                 <h3 className="text-[#28303F] text-sm lg:text-2xl font-medium truncate max-w-[120px] lg:max-w-none">
                   {user.name}
                 </h3>
-                <p className="text-xs lg:text-[10px] text-gray-500">
+
+                <div className='flex items-center gap-5'>
+                <p className="text-xs lg:text-[12px] text-white font-medium bg-[#FAC571] px-5 py-1 rounded-2xl">
                   {user.status}
                 </p>
+                <Image 
+                  src="/assets/social/more-vertical.svg" 
+                  alt="Message" 
+                  width={24} 
+                  height={24} 
+                  className="cursor-pointer rounded-full"
+                />
+
+
+                </div>
+               
               </div>
 
-              <p className="text-[#828282] text-xs lg:text-[16px] font-normal mt-1">
-                {user.desc}
+              <p className=" py-0.5 rounded-full  text-[#828282] text-xs lg:text-[16px] font-normal leading-normal">
+              {user.members}
               </p>
 
               <div className="flex gap-2 mt-2">
-                <span className="px-2 py-0.5 rounded-full bg-[#28303F14] text-[#828282] text-xs lg:text-sm">
-                  {user.members}
+                <span className="text-[#828282] text-xs lg:text-[14px] font-normal mt-1">
+                {user.desc}
                 </span>
-                <span className="px-2 py-0.5 rounded-full text-[#5E8DE5] text-xs lg:text-sm">
-                  Level {user.level}
-                </span>
+                
               </div>
             </div>
           </div>
@@ -88,25 +99,25 @@ const SocialTribesCard = () => {
 
           <div className="flex items-center justify-between gap-2 w-full">
             <div className="flex gap-2 flex-wrap sm:flex-nowrap">
-              <Button className="flex items-center md:justify-start justify-center gap-1 border w-full border-[#28303F] text-[12px] px-2 md:px-3 sm:w-[9rem] bg-transparent text-[#28303F] hover:bg-gray-100">
+              <Button className="flex items-center md:justify-start justify-center gap-2 border w-full border-[#000] text-[14px] px-2 md:px-3 sm:w-[9rem] bg-transparent text-[#28303F] hover:bg-gray-100">
                 <Image 
-                  src="/assets/social/chat02.svg" 
+                  src="/assets/social/chatting.svg" 
                   alt="Message" 
-                  width={16} 
-                  height={16} 
+                  width={20} 
+                  height={20} 
                   className="cursor-pointer rounded-full"
                 />
-                Message
+                Chats
               </Button>
-              <Button className="flex items-center md:justify-start justify-center border gap-1 w-full border-[#28303F] text-[12px] px-2 md:px-3 sm:w-[9rem] bg-transparent text-[#28303F] hover:bg-gray-100">
+              <Button className="flex items-center md:justify-start justify-center border gap-2 w-full border-[#000] text-[14px] px-2 md:px-3 sm:w-[9rem] bg-transparent text-[#28303F] hover:bg-gray-100">
                 <Image 
-                  src="/assets/social/loveGray.svg" 
+                  src="/assets/social/users 02.svg" 
                   alt="Blessing" 
-                  width={16} 
-                  height={16} 
+                  width={20} 
+                  height={20} 
                   className="cursor-pointer rounded-full"
                 />
-                Send a blessing
+                Members
               </Button>
             </div>
 
@@ -114,29 +125,14 @@ const SocialTribesCard = () => {
               href="#"
               className="flex items-center justify-center w-10 h-10 rounded-full hover:bg-gray-100"
             >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="none"
-              >
-                <path
-                  d="M14 12C14 13.1046 13.1046 14 12 14C10.8954 14 10 13.1046 10 12C10 10.8954 10.8954 10 12 10C13.1046 10 14 10.8954 14 12Z"
-                  stroke="#28303F"
-                  strokeWidth="1.5"
+                <Image 
+                  src="/assets/social/setting.svg" 
+                  alt="Message" 
+                  width={24} 
+                  height={24} 
+                  className="cursor-pointer rounded-full"
                 />
-                <path
-                  d="M14 4C14 5.10457 13.1046 6 12 6C10.8954 6 10 5.10457 10 4C10 2.89543 10.8954 2 12 2C13.1046 2 14 2.89543 14 4Z"
-                  stroke="#28303F"
-                  strokeWidth="1.5"
-                />
-                <path
-                  d="M14 20C14 21.1046 13.1046 22 12 22C10.8954 22 10 21.1046 10 20C10 18.8954 10.8954 18 12 18C13.1046 18 14 18.8954 14 20Z"
-                  stroke="#28303F"
-                  strokeWidth="1.5"
-                />
-              </svg>
+              
             </Link>
           </div>
         </div>
