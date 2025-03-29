@@ -11,25 +11,22 @@ import CreateTribe from "@/components/social/createTribe";
 
 const Tribes = () => {
   return (
-  
-    <main className="flex flex-col items-center p-3 lg:p-6 w-full">
+    <main className=" relative flex flex-col items-center p-3 lg:p-6 w-full">
       <div className="flex flex-col gap-9 w-full">
         {/* title  */}
-        <SocialHeader title="Social Hub" desc="Your Tribes"/>
+        <SocialHeader title="Social Hub" desc="Your Tribes" />
         {/* data  */}
         <div className="rounded-[12px] flex items-center lg:w-full  justify-between  gap-4 lg:gap-8 ">
           {/* first dev  */}
           <SocialLayout>
-          
-          <SocialTribesCard/> 
-          
-           <CreateTribe/>
+            <SocialTribesCard />
           </SocialLayout>
         </div>
       </div>
+
+      <CreateTribe/>
     </main>
-    
-  )
+  );
 }
 
 export default Tribes
