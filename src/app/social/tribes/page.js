@@ -6,6 +6,7 @@ import SocialLayout from "../socialLayout";
 import { Search} from "lucide-react";
 import SocialHeader from "@/components/social/social-header";
 import SocialTribesCard from "@/components/social/socialTribesCard";
+import CreateTribe from "@/components/social/createTribe";
 
 
 const Tribes = () => {
@@ -19,7 +20,10 @@ const Tribes = () => {
         <div className="rounded-[12px] flex items-center lg:w-full  justify-between  gap-4 lg:gap-8 ">
           {/* first dev  */}
           <SocialLayout>
-          <SocialTribesCard/>
+          
+          <SocialTribesCard/> 
+          
+           <CreateTribe/>
           </SocialLayout>
         </div>
       </div>
