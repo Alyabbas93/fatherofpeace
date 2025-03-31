@@ -44,6 +44,9 @@ const CreateTribe = () => {
 
 
       </div>
+
+
+      
     </main>
   );
 }
