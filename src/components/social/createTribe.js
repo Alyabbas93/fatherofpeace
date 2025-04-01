@@ -46,9 +46,11 @@ const CreateTribe = () => {
       </div>
 
 
-      
+
     </main>
   );
+
+  
 }
 
 export default CreateTribe
