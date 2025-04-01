@@ -5,7 +5,7 @@ import { Button } from '../ui/button';
 
 const CreateTribe = () => {
   return (
-    <main className="absolute flex flex-col gap-8  w-[624px] h-[680px] flex-shrink-0 bg-white  rounded-[12px] py-4 px-6">
+    <main className=" hidden absolute flex flex-col gap-8  w-[624px] h-[680px] flex-shrink-0 bg-white  rounded-[12px] py-4 px-6">
       {/* for the title  */}
       <div>
         <h1 className="text-[#28303F] font-readexpro text-2xl font-semibold leading-normal">
@@ -50,7 +50,7 @@ const CreateTribe = () => {
     </main>
   );
 
-  
+
 }
 
 export default CreateTribe
