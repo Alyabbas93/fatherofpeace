@@ -17,6 +17,9 @@ const CreateTribe = () => {
         </p>
       </div>
 
+
+
+
       {/* for the data   */}
       <div className='flex flex-col gap-9'>
         {/* tribe name  */}
