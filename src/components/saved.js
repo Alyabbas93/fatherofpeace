@@ -1,6 +1,6 @@
 import React from "react";
 import { ScrollArea } from "@/components/ui/scroll-area";
-import { Calendar } from "lucide-react";
+import { Bookmark, BookMarked, BookmarkIcon, Calendar, LucideBookmark } from "lucide-react";
 
 const SavedData = [
   "What did Mother Moon say about family values?",
@@ -14,12 +14,16 @@ const SavedData = [
 const SavedCard = () => {
   return (
      <ScrollArea className="w-full ">
-          <h3 className="text-gray-700 font-semibold mb-2">All</h3>
-          <div className="space-y-3">
+          <h3 className="text-[20px] text-[#A0A0A0] font-medium
+ mb-6 pt-2">All</h3>
+          <div className="space-y-9">
             {SavedData.map((search, index) => (
-              <div key={index} className="flex items-center w-full gap-2 text-gray-700">
-                <Calendar size={16} className="text-gray-500" />
-                <span className="text-sm text-[#28303F] text-base">{search}</span>
+              <div key={index} className="flex items-center w-full gap-3 ">
+
+<LucideBookmark size={19} stroke="#828282" fill="#828282" className="text-[#828282]" />
+
+                <span className="text-[16px] font-normal
+ text-[#828282]">{search}</span>
               </div>
             ))}
           </div>

@@ -8,22 +8,24 @@ export default function Contactcard() {
     <div className="mt-9 mx-auto bg-white  ">
       <div className="flex justify-between items-center mb-4">
         <div>
-        <h1 className="text-xl font-semibold text-[#1E2535]  self-start">
+        <h1 className="text-[28px] font-medium text-[#28303F]  self-start">
         Your Contacts
       </h1>
-          <p className="text-gray-500 text-sm">People to share blessings with</p>
+          <p className="text-[#828282] text-[14px] font-normal">People to share blessings with</p>
         </div>
-        <button className="p-2 bg-gray-200 rounded-full">
-          <Plus className="w-5 h-5 text-gray-600" />
-        </button>
+    
+        <button className="w-10 h-10 flex items-center justify-center bg-[#232938] rounded-lg">
+  <Plus className="w-5 h-5 text-white" />
+</button>
+
       </div>
       {contacts.map((contact, index) => (
-        <div key={index} className="flex items-center justify-between py-2 border-b last:border-b-0">
+        <div key={index} className="flex items-center justify-between border-b border-[#28303F0F]  py-3 ">
           <div className="flex items-center gap-3">
-            <div className="bg-gray-300  w-8 h-8 flex items-center justify-center rounded-full"></div>
+            <div className="bg-gray-300  w-9 h-9 flex items-center justify-center rounded-full"></div>
             <div>
-              <p className="text-sm font-medium">{contact}</p>
-              <p className="text-xs text-gray-500">Send 10 blessings</p>
+              <p className="text-[16px] font-medium text-[#28303F]">{contact}</p>
+              <p className="text-[12px] font-normal text-[#828282]">Send 10 blessings</p>
             </div>
           </div>
           <button>

@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { Progress } from "@/components/ui/progress";
 
 export default function AccountLevel() {
   const userData = {
@@ -15,35 +15,39 @@ export default function AccountLevel() {
   };
 
   const { level, currentXP, maxXP, stats } = userData;
-  const progress = (currentXP / maxXP) * 100;
+  const progress = Math.min((currentXP / maxXP) * 100, 100);
 
   return (
-    <div className="border rounded-lg p-6 bg-white shadow-sm w-full ">
+    <div className="rounded-lg p-6 bg-white w-full">
       <div className="flex justify-between items-center">
-        <h2 className="text-lg font-semibold">Account level</h2>
-        <span className="text-xl font-bold">{level}</span>
+        <h2 className="text-[28px] text-[#28303F] font-semibold">Account level</h2>
+        <span className="text-[28px] text-[#28303F] font-semibold">{level}</span>
       </div>
 
-      <p className="text-sm text-gray-500">Progress to Level {level + 1}</p>
-
-      <div className="flex items-center mt-2">
-        <div className="w-full h-2 bg-gray-200 rounded-full overflow-hidden">
-          <div
-            className="h-full bg-blue-500"
-            style={{ width: `${progress}%` }}
-          ></div>
+      <div className="flex justify-between text-gray-500 text-sm mb-1 pt-2">
+        <p className="text-[14px] font-normal text-[#828282]">Progress to Level {level + 1}</p>
+        <div className="flex">
+          <span className="text-[14px] font-normal text-[#5E8DE5]">{currentXP}</span>/
+          <span className="text-[14px] font-normal text-[#828282]">{maxXP}</span>
         </div>
-        <span className="text-sm text-gray-500 ml-2">{currentXP}/{maxXP}</span>
       </div>
 
-      <div className="flex justify-between mt-4 text-center">
-        {stats.map((stat, index) => (
-          <div key={index}>
-            <p className="text-lg font-semibold">{stat.value}</p>
-            <p className="text-sm text-gray-500">{stat.label}</p>
-          </div>
-        ))}
+      <div className="relative w-full h-2.5 bg-gray-300 rounded-full overflow-hidden">
+        <div
+          className="h-full bg-[#5E8DE5] rounded-full transition-all duration-300"
+          style={{ width: `${progress}%` }}
+        ></div>
       </div>
+
+      <div className="flex justify-between mt-5 text-center">
+  {stats.map((stat, index) => (
+    <div key={index}>
+      <p className="text-[18px] md:text-[24px] text-[#28303F] font-normal">{stat.value}</p>
+      <p className="text-[12px] md:text-[14px] text-[#828282] font-normal">{stat.label}</p>
+    </div>
+  ))}
+</div>
+
     </div>
   );
 }

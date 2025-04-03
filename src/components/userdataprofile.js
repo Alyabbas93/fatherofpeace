@@ -12,9 +12,9 @@ const accountData = [
 
 export default function AccountDetails() {
   return (
-    <Card className=" mx-auto ">
+    <Card className="mx-auto bg-white shadow-none border-none">
       <CardContent>
-        <h2 className="text-xl font-semibold mb-4">Account Details</h2>
+        <h2 className="text-[28px] text-[#28303F] font-semibold mb-4">Account Details</h2>
         <div className="space-y-2">
           {accountData.map((item, index) => (
             <DetailRow key={index} label={item.label} value={item.value} />
@@ -27,9 +27,9 @@ export default function AccountDetails() {
 
 function DetailRow({ label, value }) {
   return (
-    <div className="flex justify-between border-b pb-2">
-      <span className="text-gray-500">{label}</span>
-      <span className="font-medium">{value}</span>
+    <div className="flex justify-between pb-2">
+      <span className="text-[#828282] font-medium">{label}</span>
+      <span className="text-[#28303F] font-medium">{value}</span>
     </div>
   );
 }

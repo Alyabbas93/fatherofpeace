@@ -1,4 +1,4 @@
-import { Play, PlayIcon, Users } from "lucide-react";
+import { ChevronRight, Play, PlayIcon, Users } from "lucide-react";
 import { useState, useEffect } from "react";
 
 const videos = [
@@ -21,13 +21,13 @@ export default function VideoCard() {
   }, []);
 
   return (
-    <div className="bg-[#ffffff] p-4 rounded-lg border w-full">
+    <div className="bg-[#ffffff] p-4 rounded-lg   w-full">
     
-      <div className="flex items-center space-x-2 mb-2">
-        <Play className="h-5 w-5 text-gray-600" />
-        <h2 className="text-[16px] font-semibold text-[#1D1D1D]">{video.title}</h2>
+      <div className="flex items-center space-x-2 mb-1">
+        <Play size={25} strokeWidth={1.25} className=" text-[#28303F]" />
+        <h2 className="text-[28px] font-medium text-[#28303F]">{video.title}</h2>
       </div>
-      <p className="text-[12px] text-gray-500 mb-3">{video.subtitle}</p>
+      <p className="text-[14px] pl-9 font-normal text-[#828282] mb-4">{video.subtitle}</p>
 
   
       <div className="bg-gray-200 h-88 w-full rounded-lg flex items-center justify-center">
@@ -42,17 +42,18 @@ export default function VideoCard() {
       </div>
 
    
-      <div className="flex justify-between items-center text-gray-500 text-[12px] mt-3">
-        <p>{video.date}</p>
+      <div className="flex justify-between items-center text-gray-500 text-[12px] mt-3 mb-4">
+        <p className="text-[14px] text-[#828282] font-normal">{video.date}</p>
         <div className="flex items-center space-x-1">
           <Users className="h-4 w-4" />
-          <p>{video.event}</p>
+          <p className="text-[14px] text-[#828282] font-normal">{video.event}</p>
         </div>
       </div>
 
    
-      <button className="mt-3 w-full flex items-center justify-center text-[12px] border rounded-md py-2 hover:bg-gray-100">
-        <span className="mr-1 flex item-center"><PlayIcon className="h-[18px]"/></span> View More Videos
+      <button className="mt-3 w-full flex items-center mb-4 justify-center gap-4 text-[12px] border border-[#28303F] rounded-md py-3 hover:bg-gray-100">
+        <span className="mr-1 flex item-center"><ChevronRight size={24} strokeWidth={1.25} /></span> 
+        <span className="text-[14px] font-normal">View More Videos</span>
       </button>
     </div>
   );

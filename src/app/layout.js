@@ -30,10 +30,10 @@ export default function RootLayout({ children }) {
       >
         <div className="flex bg-[#f8f8f8]">
         <SidebarProvider>
-      <AppSidebar/>
-      <main className="w-full">
-        <div className="flex items-center">
-        <SidebarTrigger />
+      <AppSidebar className="relative"/>
+      <main className="w-[100%]">
+        <div className="flex">
+
         <Header/>
         </div>
         {children}
