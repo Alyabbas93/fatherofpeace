@@ -10,8 +10,8 @@ const JourneyCard = () => {
   ];
 
   return (
-    <div className="border-b border-[#28303F0F] pb-12">
-      <h1 className="text-[28px] font-medium  text-[#28303F] mb-4 self-start">
+    <div>
+      <h1 className="text-xl font-semibold text-[#1E2535] mb-4 self-start">
         Your Journey
       </h1>
       <JourneyTabs tabs={tabsData} />

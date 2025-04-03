@@ -31,12 +31,8 @@ const ProfileImageUploader = () => {
 
         <div className="absolute top-38   right-0  p-2 ">
           <SquarePen size={19} className="text-gray-600" />
-        </div>
-        
-        <input id="imageUpload" type="file" accept="image/*" className="hidden" onChange={handleImageChange} />
-      </label>
-
-      <p className="text-[14px] font-font-normal text-gray-500 pt-9">Image max and min size description</p>
+    </div>
+    </label>
     </div>
   );
 };
