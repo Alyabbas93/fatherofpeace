@@ -18,7 +18,7 @@ import {
   Menu,
   ChevronRight,
   ChevronDown,
-  ArrowBigRightDash,
+  ArrowBigRightDash, // Importing the icon
 } from "lucide-react";
 import Link from "next/link";
 
@@ -31,10 +31,18 @@ export function AppSidebar() {
   const menuItems = [
     { name: "Dashboard", url: "/", icon: <Home className="mr-3 h-6 w-6" /> },
     { name: "Ask True Mother", url: "/askTrueMother", icon: <MessageCircle className="mr-3 h-5 w-5" /> },
-    { name: "Social", url: "/social", icon: <Home className="mr-3 h-5 w-5" /> },
+    { 
+      name: "Social",
+      icon: <Home className="mr-3 h-5 w-5" />,
+      subLinks:[ 
+        { name: "Friends", url: "/social/friends" },
+        { name: "Tribes", url: "/social/tribes" },
+        { name: "Activity", url: "/social/activity" },
+      ]
+    },
     {
       name: "Achievements",
-      url: "/achievements", 
+      url: "/achievements",
       icon: <Trophy className="mr-3 h-5 w-5" />,
       subLinks: [
         { name: "All Achievements", url: "/achievements/allAchievements" },
@@ -58,7 +66,7 @@ export function AppSidebar() {
     if (item.subLinks) {
       setOpenItems((prev) => ({
         ...prev,
-        [item.name]: true,
+        [item.name]: !prev[item.name], // Toggle open state
       }));
     }
 
@@ -124,11 +132,10 @@ export function AppSidebar() {
 
       {!isSidebarOpen && (
         <div
-          className="fixed left-0 top-1/3 w-6 h-16 bg-[#28303F] flex item-center justify-center rounded-r-lg cursor-pointer transition-all duration-300 z-50"
+          className="fixed left-0 top-1/3 w-6 h-16 bg-[#28303F] flex items-center justify-center rounded-r-lg cursor-pointer transition-all duration-300 z-50"
           onClick={() => setIsSidebarOpen(true)} 
-          
         >
-        <ArrowBigRightDash size={30} className="text-white place-self-center " />
+          <ArrowBigRightDash size={30} className="text-white place-self-center" />
         </div>
       )}
     </>

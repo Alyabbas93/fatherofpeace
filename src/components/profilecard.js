@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 
 const userData = {
   name: "John Doe",
@@ -16,67 +16,63 @@ const userData = {
 };
 
 const ProfileCard = () => {
-  const storedImage = localStorage.getItem("profileImage");
+  const [storedImage, setStoredImage] = useState(null);
+
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      const image = localStorage.getItem("profileImage");
+      setStoredImage(image); // Set the image to state once client-side
+    }
+  }, []);
 
   return (
-    
-    <div className=" mx-auto mb-9 border-b border-[#28303F0F] pb-12 py-5 ">
-<h1 className="text-[28px] font-medium text-[#28303F] mb-4 self-start">
+    <div className="mx-auto mb-9 border-b border-[#28303F0F] pb-12 py-5">
+      <h1 className="text-[28px] font-medium text-[#28303F] mb-4 self-start">
         Your Profile
       </h1>
       <div className="flex items-center gap-4">
-      <div className="w-14 h-14 sm:w-12 sm:h-12 md:w-18 md:h-18 place-self-start border-2 border-yellow-400 rounded-full overflow-hidden flex-shrink-0">
-  <img
-    src={storedImage}
-    alt="Profile"
-    className="w-full h-full object-cover"
-  />
-</div>
+        <div className="w-14 h-14 sm:w-12 sm:h-12 md:w-18 md:h-18 place-self-start border-2 border-yellow-400 rounded-full overflow-hidden flex-shrink-0">
+          <img
+            src={storedImage || userData.profilePic} // Use default if no stored image
+            alt="Profile"
+            className="w-full h-full object-cover"
+          />
+        </div>
 
-      <div className="flex flex-col w-full">
+        <div className="flex flex-col w-full">
           <h2 className="text-[28px] font-medium text-[#28303F]">{userData.name}</h2>
           <p className="text-[#828282] font-normal text-[14px]">{userData.role}</p>
-          <div className="flex text-[#5E8DE5]  gap-4 mt-3">
-     
-          <button className="px-6 py-1 flex  items-center justify-center text-xs bg-[#28303F14]  rounded-full h-[19px]">
-          {userData.level} 
-        </button>
-     
-        <button className="px-6 items-center text-[#5E8DE5] justify-center flex py-1 text-xs bg-[#28303F14]  rounded-full h-[19px]">
-          {userData.points} 
-      
-        </button>
-   
-        </div>
-        <div className="flex   gap-[50px] px-[9px]">
-        <span className="text-[#828282]  text-[14px] font-normal">Level</span>
-        <span className="text-[#828282]  text-[14px] font-normal">Points</span>
-        </div>
+          <div className="flex text-[#5E8DE5] gap-4 mt-3">
+            <button className="px-6 py-1 flex items-center justify-center text-xs bg-[#28303F14] rounded-full h-[19px]">
+              {userData.level}
+            </button>
+            <button className="px-6 items-center text-[#5E8DE5] justify-center flex py-1 text-xs bg-[#28303F14] rounded-full h-[19px]">
+              {userData.points}
+            </button>
+          </div>
+          <div className="flex gap-[50px] px-[9px]">
+            <span className="text-[#828282] text-[14px] font-normal">Level</span>
+            <span className="text-[#828282] text-[14px] font-normal">Points</span>
+          </div>
         </div>
       </div>
 
-     
-
       <div className="mt-3">
-      <div className="flex items-center justify-between">
-  <p className="text-[14px] text-[#828282] font-normal">
-    Progress to Level {userData.level + 1}
-  </p>
-  <p className="text-xs text-right">
-    <span className="text-[14px] font-normal text-[#5E8DE5]">{userData.points}</span>
-    <span className="text-[14px] font-normal text-[#828282]">/{userData.maxPoints}</span>
-  </p>
-</div>
-
-      
+        <div className="flex items-center justify-between">
+          <p className="text-[14px] text-[#828282] font-normal">
+            Progress to Level {userData.level + 1}
+          </p>
+          <p className="text-xs text-right">
+            <span className="text-[14px] font-normal text-[#5E8DE5]">{userData.points}</span>
+            <span className="text-[14px] font-normal text-[#828282]">/{userData.maxPoints}</span>
+          </p>
+        </div>
         <div className="w-full bg-gray-200 h-2 mt-1 rounded-full">
           <div
             className="bg-[#5E8DE5] h-2 rounded-full"
             style={{ width: `${userData.progress}%` }}
           ></div>
-         
         </div>
-       
       </div>
 
       <div className="flex justify-between mt-6 text-center">

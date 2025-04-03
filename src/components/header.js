@@ -16,7 +16,7 @@ const Header = () => {
         <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-500" size={16} />
       </div>
 
-      <div className="flex items-center gap-4">
+      <div className="flex items-center gap-6">
        <InboxPopover/>
 
              <NotificationPopover/> 
