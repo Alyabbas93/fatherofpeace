@@ -71,23 +71,42 @@ const FriendCard = ({
         <hr />
 
 
-        <div className="flex items-center justify-between gap-2 w-full ">
+        <div className="flex items-center justify-between gap-2 w-[100%] ">
           {/* wann die Active ist online  */}
-          { lastActive && (
+          {lastActive && (
+  <section className="flex gap-2 w-full ">
+    {/* Message Button */}
+    <div >
 
-            <>
-           <div className="flex gap-2 flex-wrap sm:flex-nowrap ">
-          <Button className="flex items-center md:justify-start justify-center gap-1 border w-full border-[#28303F] text-[12px] px-2 md:px-3 sm:w-[9rem] bg-transparent text-[#28303F] hover:bg-gray-100">
-          <Image className='cursor-pointer rounded-full  ' src="/assets/social/chat02.svg" alt="pin" width={16} height={16} />
-          Message
-          </Button>
-          <Button className="flex items-center md:justify-start justify-center border gap-1 w-full border-[#28303F] text-[12px] px-2 md:px-3 sm:w-[9rem] bg-transparent text-[#28303F] hover:bg-gray-100">
-          <Image className='cursor-pointer rounded-full  ' src="/assets/social/loveGray.svg" alt="pin" width={16} height={16} />
-          Send a blessing
-          </Button>
-        </div>
-          </>
-          )}
+    
+    <Button className="flex cursor-pointer  flex-1 items-center justify-center md:justify-start gap-1 border border-[#28303F] text-xs px-2 md:px-3 bg-transparent text-[#28303F] hover:bg-gray-100 min-w-0">
+      <Image 
+        className="rounded-full" 
+        src="/assets/social/chat02.svg" 
+        alt="Message" 
+        width={16} 
+        height={16} 
+      />
+      <span className="truncate">Message</span>
+    </Button>
+    </div>
+    
+    {/* Blessing Button */}
+    <div>
+    <Button className="flex cursor-pointer flex-1 items-center text-center justify-center md:justify-start gap-1 border border-[#28303F] text-xs px-2 md:px-4 bg-transparent text-[#28303F] hover:bg-gray-100 min-w-0">
+      <Image 
+        className=" rounded-full" 
+        src="/assets/social/loveGray.svg" 
+        alt="Send blessing" 
+        width={16} 
+        height={16} 
+      />
+      <span className="text-[12px]">Send a blessing</span>
+    </Button>
+    </div>
+    
+  </section>
+)}
 
             {/* wann die pin ist in der props  */}
           { pin && (

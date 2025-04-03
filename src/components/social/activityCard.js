@@ -46,7 +46,7 @@ const ActivityCard = (
         {/* trophy section */}
         <div className="flex  items-center h-fit gap-2 ">
           <div className="relative flex flex-col  justify-baseline items-end  gap-5">
-            <p className="text-[#828282] font-readexpro text-[10px] lg:text-sm w-[60px] font-normal leading-normal">
+            <p className="text-[#828282] font-readexpro text-[10px] lg:text-sm font-normal leading-normal">
               {status}
             </p>
 

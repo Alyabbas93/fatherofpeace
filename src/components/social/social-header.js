@@ -41,9 +41,9 @@ const SocialHeader = ({ title, desc }) => {
 
       <div className="flex items-center gap-4">
         {/* Search - assuming this is part of a search input */}
-        <div className="relative flex">
-          <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-500" size={16} />
-          <input type="text" placeholder="Search..." className="pl-10 pr-4 py-2 border bg-white rounded-lg" />
+        <div className="relative">
+          <Search className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-500" size={16} />
+          <input type="text" placeholder="Search..." className="pl-4 pr-10 py-2 border bg-white rounded-lg" />
         </div>
 
         <Dialog>
