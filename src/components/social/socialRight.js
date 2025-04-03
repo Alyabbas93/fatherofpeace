@@ -1,3 +1,5 @@
+"use client"
+
 import React from 'react'
 import FriendRequests from '../requestscard'
 import SuggTribes from './suggTribes'

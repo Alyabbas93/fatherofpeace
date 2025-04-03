@@ -1,3 +1,5 @@
+"use client"
+
 import SocialRight from '@/components/social/socialRight'
 import React from 'react'
 

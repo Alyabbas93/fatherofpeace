@@ -1,3 +1,6 @@
+"use client"
+
+
 
 import { Button } from "@/components/ui/button";
 import { Plus } from "lucide-react";
@@ -23,8 +26,6 @@ const Tribes = () => {
           </SocialLayout>
         </div>
       </div>
-
-      <CreateTribe/>
     </main>
   );
 }
