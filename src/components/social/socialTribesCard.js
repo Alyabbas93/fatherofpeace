@@ -6,40 +6,9 @@ import Link from 'next/link';
 import { Button } from '../ui/button';
 
 
-const dummyFriends = [
-    {
-      id: 1,
-      name: "Peace Builders",
-      status: "Admin",
-      members: "28 members",
-      level: 8,
-      desc:"A group dedicated to sharing and discussing True Mother's on peace",
-  
-      avatarSrc: "/assets/achievements/Ellipse16.svg",
-    },
-    {
-      id: 2,
-      name: "Family Values ",
-      status: "Admin",
-      members: "42 members",
-      level: 12,
-      desc:"Exploring True Mother's wisdom on family and relationship",
-      avatarSrc: "/assets/achievements/Ellipse16.svg",
-    },
-    {
-      id: 3,
-      name: "Youth Leadership ",
-      status: "Admin",
-      members: "15 members",
-      level: 5,
-      desc:"Young leaders inspired by True Mother's vision",
-      avatarSrc: "/assets/achievements/Ellipse16.svg",
-    },
-  
-  ];
   
 
-const SocialTribesCard = () => {
+const SocialTribesCard = ({dummyFriends}) => {
     return (
         <div className="flex flex-col gap-4 w-full">
       {dummyFriends.map((user) => (
@@ -99,7 +68,7 @@ const SocialTribesCard = () => {
 
           <div className="flex items-center justify-between gap-2 w-full">
             <div className="flex gap-2 flex-wrap sm:flex-nowrap">
-              <Button className="flex items-center md:justify-start justify-center gap-2 border w-full border-[#000] text-[14px] px-2 md:px-3 sm:w-[9rem] bg-transparent text-[#28303F] hover:bg-gray-100">
+              <Button className="flex cursor-pointer items-center md:justify-start justify-center gap-2 border w-full border-[#000] text-[14px] px-2 md:px-3 sm:w-[9rem] bg-transparent text-[#28303F] hover:bg-gray-100">
                 <Image 
                   src="/assets/social/chatting.svg" 
                   alt="Message" 
@@ -109,7 +78,7 @@ const SocialTribesCard = () => {
                 />
                 Chats
               </Button>
-              <Button className="flex items-center md:justify-start justify-center border gap-2 w-full border-[#000] text-[14px] px-2 md:px-3 sm:w-[9rem] bg-transparent text-[#28303F] hover:bg-gray-100">
+              <Button className="flex cursor-pointer items-center md:justify-start justify-center border gap-2 w-full border-[#000] text-[14px] px-2 md:px-3 sm:w-[9rem] bg-transparent text-[#28303F] hover:bg-gray-100">
                 <Image 
                   src="/assets/social/users 02.svg" 
                   alt="Blessing" 
