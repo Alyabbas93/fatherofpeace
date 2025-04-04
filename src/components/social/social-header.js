@@ -41,17 +41,21 @@ const SocialHeader = ({ title, desc , dummyFriends, dummyFriends2, setFilteredUs
 
     if (value.trim() === "") {
       setFilteredUsers([]);
-      setFilteredUsers2([]);
+      if (dummyFriends2) {
+        setFilteredUsers2([]);
+      }
     } else {
       const filteredFriends = dummyFriends.filter(user =>
         user.name.toLowerCase().includes(value.toLowerCase())
       );
       setFilteredUsers(filteredFriends);
 
-      const filteredFriends2 = dummyFriends2.filter(user =>
-        user.name.toLowerCase().includes(value.toLowerCase())
-      );
-      setFilteredUsers2(filteredFriends2);
+      if (dummyFriends2) {
+        const filteredFriends2 = dummyFriends2.filter(user =>
+          user.name.toLowerCase().includes(value.toLowerCase())
+        );
+        setFilteredUsers2(filteredFriends2);
+      }
     }
   };
 

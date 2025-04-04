@@ -51,7 +51,7 @@ const AchievementCard1 = ({ title, description, completed, total, points, status
                 <Progress
                     value={(completed / total) * 100}
                     className="h-2 bg-gray-200"
-                    colorClass="bg-[#5E8DE5]"
+                    colorclass="bg-[#5E8DE5]"
                 />
                 <p className="text-sm text-[#5E8DE5]">
                     +{points} points when completed
