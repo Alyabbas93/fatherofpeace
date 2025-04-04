@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { Check, X, MoreVertical, UserRound } from "lucide-react";
+import { Button } from "./ui/button";
 
 export default function FriendRequests() {
   const [requests, setRequests] = useState([
@@ -9,6 +10,20 @@ export default function FriendRequests() {
     { id: 2, name: "Scarlet", mutualFriends: 3, avatar: "https://randomuser.me/api/portraits/women/45.jpg" },
     { id: 3, name: "Mai", mutualFriends: 3, avatar: "https://randomuser.me/api/portraits/women/46.jpg" },
   ]);
+
+  const [friendList, setFriendList] = useState([]);
+
+
+  // Function to handle accepting a friend request
+  const handleAcceptRequest = (request) => {
+    setRequests(requests.filter(req => req.id !== request.id)); // Remove the request from the requests array
+    setFriendList([...friendList, request]); // Add the user to the friend list
+  };
+
+  // Function to handle declining a friend request
+  const handleDeclineRequest = (request) => {
+    setRequests(requests.filter(req => req.id !== request.id)); // Remove the request from the requests array
+  };
 
   return (
     <div className="rounded-lg p-4 bg-white w-full">
@@ -38,23 +53,26 @@ export default function FriendRequests() {
             </div>
 
             <div className="flex items-center gap-1.5">
-              <button className="w-8 h-8 sm:w-10 sm:h-10 flex items-center justify-center border border-[#FA8171] text-red-500 rounded-full hover:bg-red-200">
+              <Button className=" cursor-pointer bg-transparent w-8 h-8 sm:w-10 sm:h-10 flex items-center justify-center border border-[#FA8171] text-red-500 rounded-full hover:bg-red-200"
+              onClick={()=> handleDeclineRequest(request)}
+              >
                 <X className="h-4 w-4 sm:h-5 sm:w-5" />
-              </button>
-              <button className="w-8 h-8 sm:w-10 sm:h-10 flex items-center justify-center bg-[#4AB794] rounded-full hover:bg-green-200">
+              </Button>
+              <Button className="cursor-pointer w-8 h-8 sm:w-10 sm:h-10 flex items-center justify-center bg-[#4AB794] rounded-full hover:bg-green-200"
+              onClick={()=> handleAcceptRequest(request)}>
                 <Check className="h-4 w-4 sm:h-5 sm:w-5 text-white" />
-              </button>
-              <button className="w-8 h-8 sm:w-10 sm:h-10 flex items-center justify-center text-gray-500 hover:text-[#28303F]">
+              </Button>
+              <Button className="cursor-pointer bg-transparent w-8 h-8 sm:w-10 sm:h-10 flex items-center justify-center text-gray-500 hover:text-[#28303F] hover:bg-transparent rounded-full">
                 <MoreVertical className="h-5 w-5 sm:h-6 sm:w-6" />
-              </button>
+              </Button>
             </div>
           </div>
         ))}
       </div>
 
-      <button className="w-full mt-4 p-3 sm:p-4 border border-[#28303F] text-[14px] sm:text-[16px] font-medium rounded-lg hover:bg-gray-100">
+      <Button className="w-full mt-4 text-black py-7 cursor-pointer  bg-transparent border border-[#28303F] text-[16px] font-medium rounded-lg hover:bg-gray-100">
         Load More
-      </button>
+      </Button>
     </div>
   );
 }

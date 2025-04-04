@@ -3,33 +3,9 @@ import Image from "next/image";
 import React from "react";
 import ActivityCard from "./activityCard";
 
-const leaderboardData = [
-  {
-    id: 1,
-    image: "/assets/achievements/Ellipse16.svg",
-    name: "John Doe",
-    desc: "Shared a quote about family values",
-    status:"2 hours ago"
-  },
-  {
-    id: 2,
-    image: "/assets/achievements/Ellipse16.svg",
-    name: "Jane Smith",
-    desc: "Shared a quote about family values",
-    image2: "/assets/social/share.svg",
-    status:"2 hours ago"
-    },
-  {
-    id: 3,
-    image: "/assets/achievements/Ellipse16.svg",
-    name: "Alice Brown",
-    desc: "Shared a quote about family values",
-     status:"2 hours ago"
-  },
- 
-];
 
-const FriendsActivity = () => {
+
+const FriendsActivity = ({leaderboardData}) => {
   return (
     <main className="bg-white p-2 lg:p-6 rounded-[12px] flex flex-col gap-5">
       
