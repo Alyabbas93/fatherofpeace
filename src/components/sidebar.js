@@ -66,7 +66,7 @@ export function AppSidebar() {
     if (item.subLinks) {
       setOpenItems((prev) => ({
         ...prev,
-        [item.name]: !prev[item.name], // Toggle open state
+        [item.name]: !prev[item.name], 
       }));
     }
 
@@ -79,7 +79,7 @@ export function AppSidebar() {
     <>
       {isSidebarOpen && (
         <Sidebar className="h-screen bg-white p-2 border-r w-64 transition-all duration-300">
-          <SidebarHeader className="mb-6 flex flex-row justify-between items-center">
+          <SidebarHeader className="mb-6 bg-white flex flex-row justify-between items-center">
             <span className="text-lg font-bold">FAMILY FEDERATION</span>
             <div
               className="h-7 w-7 flex items-center justify-center bg-gray-800 rounded cursor-pointer"
@@ -89,13 +89,13 @@ export function AppSidebar() {
             </div>
           </SidebarHeader>
 
-          <SidebarContent>
+          <SidebarContent className="bg-white">
             <p className="text-[16px] px-2 font-medium">Main Menu</p>
             <SidebarMenu>
               {menuItems.map((item) => (
-                <div key={item.name}>
+                <div key={item.name} className="flex flex-col gap-1">
                   <SidebarMenuButton
-                    className={`flex items-center p-4 rounded-md text-[15px] py-[20px] font-medium text-gray-700 hover:bg-gray-100 w-full transition ${
+                    className={`flex items-center cursor-pointer p-4 rounded-md text-[15px] py-[20px] font-medium text-gray-700 hover:bg-gray-100 w-full transition ${
                       pathname === item.url ? "bg-gray-200 font-semibold" : ""
                     }`}
                     onClick={() => handleClick(item)}
@@ -111,11 +111,11 @@ export function AppSidebar() {
                   </SidebarMenuButton>
 
                   {item.subLinks && openItems[item.name] && (
-                    <div className="ml-6">
+                    <div className="ml-6 flex flex-col gap-[1px]">
                       {item.subLinks.map((sub) => (
                         <SidebarMenuItem key={sub.name}>
                           <Link href={sub.url} passHref>
-                            <SidebarMenuButton className="p-3 text-[14px] text-gray-600 hover:bg-gray-100 rounded-md w-full">
+                            <SidebarMenuButton className={`p-3 text-[14px]  text-gray-600 hover:bg-gray-100 rounded-md w-full cursor-pointer ${ pathname === sub.url ? "bg-gray-100 text-gray-700 font-semibold" : "text-gray-700 hover:bg-gray-100"}`} >
                               {sub.name}
                             </SidebarMenuButton>
                           </Link>
@@ -135,7 +135,7 @@ export function AppSidebar() {
           className="fixed left-0 top-1/3 w-6 h-16 bg-[#28303F] flex items-center justify-center rounded-r-lg cursor-pointer transition-all duration-300 z-50"
           onClick={() => setIsSidebarOpen(true)} 
         >
-          <ArrowBigRightDash size={30} className="text-white place-self-center" />
+          <ArrowBigRightDash size={30} className="text-white place-self-center cursor-pointer" />
         </div>
       )}
     </>

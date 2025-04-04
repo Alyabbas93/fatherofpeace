@@ -4,44 +4,8 @@ import React from "react";
 import FriendCard from "./friendCard";
 import Link from "next/link";
 
-const dummyFriends = [
-  {
-    id: 1,
-    name: "Terry",
-    lastActive: "2 hours ago",
-    role: "Peace Ambassador",
-    level: 8,
 
-    avatarSrc: "/assets/achievements/Ellipse16.svg",
-  },
-  {
-    id: 2,
-    name: "Alex ",
-    lastActive: "15 minutes ago",
-    role: "Meditation Master",
-    level: 12,
-
-    avatarSrc: "/assets/achievements/Ellipse16.svg",
-  },
-  {
-    id: 3,
-    name: "Jamie ",
-    lastActive: "1 day ago",
-    role: "Wisdom Seeker",
-    level: 5,
-    avatarSrc: "/assets/achievements/Ellipse16.svg",
-  },
-  {
-    id: 4,
-    name: "Terry ",
-    lastActive: "1 day ago",
-    role: "Wisdom Seeker",
-    level: 5,
-    avatarSrc: "/assets/achievements/Ellipse16.svg",
-  },
-];
-
-const FriendList = () => {
+const FriendList = ({dummyFriends}) => {
   return (
     <main className="border-[rgba(217,217,217,0.10)] border">
       <div className="bg-white p-6 rounded-[12px] flex flex-col gap-8">
@@ -87,7 +51,7 @@ const FriendList = () => {
           </div>
 
           <div className="flex items-end lg:gap-6 justify-center p-2">
-            <div>
+            <div className=" cursor-pointer">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="20"
@@ -104,7 +68,7 @@ const FriendList = () => {
               </svg>
             </div>
 
-            <div>
+            <div className=" cursor-pointer">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="20"

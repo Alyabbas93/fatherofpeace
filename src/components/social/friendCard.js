@@ -155,7 +155,7 @@ const FriendCard = ({
             </div>
             <div className="flex sm:gap-6 justify-between sm:justify-end items-center w-full">
             <Image className='cursor-pointer rounded-full  ' src="/assets/social/love.svg" alt="pin" width={25} height={25} />
-              <Button className="flex items-center border border-[#28303F] text-[12px] text-[#28303F] bg-transparent hover:bg-gray-100">
+              <Button className="flex items-center cursor-pointer border border-[#28303F] text-[12px] text-[#28303F] bg-transparent hover:bg-gray-100">
                 <Plus size={20} strokeWidth={2} className="text-[#28303F]" />
                 Send add request
               </Button>
