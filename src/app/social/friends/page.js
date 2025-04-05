@@ -44,6 +44,7 @@ const dummyFriends = [
     level: 5,
     avatarSrc: "/assets/achievements/Ellipse16.svg",
   },
+
 ];
 
 const dummyFriends2 = [
@@ -110,7 +111,8 @@ const dummyFriends2 = [
     avatarSrc: "/assets/achievements/Ellipse16.svg",
     pin: "/assets/social/pin.svg",
     dots:"/assets/social/more-vertical.svg"
-  },
+  }
+ 
 ];
 
 
