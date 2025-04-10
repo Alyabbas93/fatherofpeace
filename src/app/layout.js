@@ -6,6 +6,7 @@ import "./globals.css";
 import { SidebarProvider, SidebarTrigger } from "@/components/ui/sidebar";
 import { AppSidebar } from "@/components/sidebar";
 import Header from "@/components/header";
+import AuthLayout from "@/components/authLayout/authLayout";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -28,6 +29,7 @@ export default function RootLayout({ children }) {
        <body suppressHydrationWarning
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
+        <AuthLayout>
         <div className="flex bg-[#f8f8f8]">
         <SidebarProvider>
       <AppSidebar className="relative"/>
@@ -40,6 +42,7 @@ export default function RootLayout({ children }) {
       </main>
     </SidebarProvider>
         </div>
+        </AuthLayout>
       </body>
     </html>
   );
