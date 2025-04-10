@@ -3,6 +3,7 @@ import { Home, User, Bell, Award, LogOut } from "lucide-react";
 import { Popover, PopoverTrigger, PopoverContent } from "@/components/ui/popover";
 import { Button } from "@/components/ui/button";
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
+import LoginButton from "./LoginLogoutButton";
 
 const menuItems = [
   { name: "Profile Setting", icon: <Home size={16} />, key: "Profile Setting" },
@@ -50,10 +51,11 @@ const ProfilePopper = () => {
           ))}
         </ul>
 
-        <Button variant="outline" className="w-full mt-4 flex items-center gap-2 text-gray-700">
+        {/* <Button variant="outline" className="w-full mt-4 flex items-center gap-2 text-gray-700">
           <LogOut size={16} />
           Log out
-        </Button>
+        </Button> */}
+        <LoginButton/>
       </PopoverContent>
     </Popover>
   );
