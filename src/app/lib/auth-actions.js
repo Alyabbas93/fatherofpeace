@@ -28,6 +28,9 @@ export async function login(formData) {
 export async function signup(formData) {
   const supabase = createClient();
 
+  console.log("Supabase client:", supabase);
+console.log("Supabase auth:", supabase.auth);
+
   const firstName = formData.get("first-name");
   const lastName = formData.get("last-name");
 
