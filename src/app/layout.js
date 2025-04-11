@@ -29,7 +29,7 @@ export default function RootLayout({ children }) {
        <body suppressHydrationWarning
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <AuthLayout>
+        {/* <AuthLayout> */}
         <div className="flex bg-[#f8f8f8]">
         <SidebarProvider>
       <AppSidebar className="relative"/>
@@ -42,7 +42,7 @@ export default function RootLayout({ children }) {
       </main>
     </SidebarProvider>
         </div>
-        </AuthLayout>
+        {/* </AuthLayout> */}
       </body>
     </html>
   );
