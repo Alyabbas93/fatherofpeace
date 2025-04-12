@@ -67,6 +67,13 @@ const initialState = {
       mutualFriends: 3,
       avatar: "https://randomuser.me/api/portraits/women/46.jpg",
     },
+
+    {
+      id: 104,
+      name: "Stark",
+      mutualFriends: 3,
+      avatar: "https://randomuser.me/api/portraits/women/45.jpg",
+    },
   ],
   filteredFriends: [],
   filteredPeople: [],
