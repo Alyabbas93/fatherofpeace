@@ -21,12 +21,21 @@ import {
   ArrowBigRightDash, // Importing the icon
 } from "lucide-react";
 import Link from "next/link";
+import { useDispatch, useSelector } from "react-redux";
+import { selectIsSidebarOpen, selectOpenItems, toggleMenuItem, toggleSidebar } from "@/store/slices/sidebarSlice";
 
 export function AppSidebar() {
   const pathname = usePathname();
   const router = useRouter();
-  const [openItems, setOpenItems] = useState({});
-  const [isSidebarOpen, setIsSidebarOpen] = useState(true); // Controls sidebar visibility
+  const dispatch = useDispatch()
+
+
+
+  const isSidebarOpen = useSelector(selectIsSidebarOpen)
+  const openItems  = useSelector(selectOpenItems)
+
+  // const [openItems, setOpenItems] = useState({});
+  // const [isSidebarOpen, setIsSidebarOpen] = useState(true); // Controls sidebar visibility
 
   const menuItems = [
     { name: "Dashboard", url: "/", icon: <Home className="mr-3 h-6 w-6" /> },
@@ -64,10 +73,7 @@ export function AppSidebar() {
 
   const handleClick = (item) => {
     if (item.subLinks) {
-      setOpenItems((prev) => ({
-        ...prev,
-        [item.name]: !prev[item.name], 
-      }));
+      dispatch(toggleMenuItem({ name: item.name }));
     }
 
     if (item.url) {
@@ -83,7 +89,7 @@ export function AppSidebar() {
             <span className="text-lg font-bold">FAMILY FEDERATION</span>
             <div
               className="h-7 w-7 flex items-center justify-center bg-gray-800 rounded cursor-pointer"
-              onClick={() => setIsSidebarOpen(false)} 
+              onClick={() => dispatch(toggleSidebar())} 
             >
               <Menu className="h-4 w-4 text-white" />
             </div>
@@ -133,7 +139,7 @@ export function AppSidebar() {
       {!isSidebarOpen && (
         <div
           className="fixed left-0 top-1/3 w-6 h-16 bg-[#28303F] flex items-center justify-center rounded-r-lg cursor-pointer transition-all duration-300 z-50"
-          onClick={() => setIsSidebarOpen(true)} 
+          onClick={() => dispatch(toggleSidebar())} 
         >
           <ArrowBigRightDash size={30} className="text-white place-self-center cursor-pointer" />
         </div>

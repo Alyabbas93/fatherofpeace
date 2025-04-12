@@ -3,27 +3,43 @@
 import { useState } from "react";
 import { Check, X, MoreVertical, UserRound } from "lucide-react";
 import { Button } from "./ui/button";
+import { useDispatch, useSelector } from "react-redux";
+import { acceptFriendRequest, declineFriendRequest, selectFriendRequests } from "@/store/slices/friendsSlice";
 
 export default function FriendRequests() {
-  const [requests, setRequests] = useState([
-    { id: 1, name: "Jessica", mutualFriends: 3, avatar: "https://randomuser.me/api/portraits/women/44.jpg" },
-    { id: 2, name: "Scarlet", mutualFriends: 3, avatar: "https://randomuser.me/api/portraits/women/45.jpg" },
-    { id: 3, name: "Mai", mutualFriends: 3, avatar: "https://randomuser.me/api/portraits/women/46.jpg" },
-  ]);
+
+  const dispatch = useDispatch();
+  const requests = useSelector(selectFriendRequests);
+
+
+  const handleAcceptRequest = (request) => {
+    dispatch(acceptFriendRequest({id:request.id}))
+
+  }
+
+  const handleDeclineRequest = (request) => {
+    dispatch(declineFriendRequest({id:request.id})) 
+  }
+
+  // const [requests, setRequests] = useState([
+  //   { id: 1, name: "Jessica", mutualFriends: 3, avatar: "https://randomuser.me/api/portraits/women/44.jpg" },
+  //   { id: 2, name: "Scarlet", mutualFriends: 3, avatar: "https://randomuser.me/api/portraits/women/45.jpg" },
+  //   { id: 3, name: "Mai", mutualFriends: 3, avatar: "https://randomuser.me/api/portraits/women/46.jpg" },
+  // ]);
 
   const [friendList, setFriendList] = useState([]);
 
 
   // Function to handle accepting a friend request
-  const handleAcceptRequest = (request) => {
-    setRequests(requests.filter(req => req.id !== request.id)); // Remove the request from the requests array
-    setFriendList([...friendList, request]); // Add the user to the friend list
-  };
+  // const handleAcceptRequest = (request) => {
+  //   setRequests(requests.filter(req => req.id !== request.id)); // Remove the request from the requests array
+  //   setFriendList([...friendList, request]); // Add the user to the friend list
+  // };
 
-  // Function to handle declining a friend request
-  const handleDeclineRequest = (request) => {
-    setRequests(requests.filter(req => req.id !== request.id)); // Remove the request from the requests array
-  };
+  // // Function to handle declining a friend request
+  // const handleDeclineRequest = (request) => {
+  //   setRequests(requests.filter(req => req.id !== request.id)); // Remove the request from the requests array
+  // };
 
   return (
     <div className="rounded-lg p-4 bg-white w-full">
@@ -38,7 +54,8 @@ export default function FriendRequests() {
       </div>
 
       <div>
-        {requests.map((request) => (
+      {requests.length > 0 ? (
+        requests.map((request) => (
           <div key={request.id} className="flex items-center justify-between py-3  last:border-0">
             <div className="flex items-center gap-2 sm:gap-3">
               <img
@@ -67,7 +84,10 @@ export default function FriendRequests() {
               </Button>
             </div>
           </div>
-        ))}
+        ))
+      ):(
+      <p className="text-center py-4 text-gray-500">No pending friend requests</p>
+    )}
       </div>
 
       <Button className="w-full mt-4 text-black py-7 cursor-pointer  bg-transparent border border-[#28303F] text-[16px] font-medium rounded-lg hover:bg-gray-100">

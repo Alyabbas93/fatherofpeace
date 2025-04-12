@@ -19,18 +19,14 @@ const FriendCard = ({
       <div className="flex flex-col px-1 lg:px-3 py-5   gap-4 justify-between border border-[rgba(40,48,63,0.08)] bg-white w-full rounded-xl  h-[191px] flex-shrink-0">
         <div className="flex lg:gap-4 w-full">
           <div className="w-20 h-15 flex justify-center">
-            <Avatar className="relative ">
-            <Image
-                src={avatarSrc}
-                alt="@shadcn"
-                width={60}
-                height={60}
-                className="rounded-full"
-              />
+            <Avatar className="relative">
+            
+            <img src={avatarSrc || "/placeholder.svg"} alt={name} className="w-16 h-16 rounded-full object-cover" />
+
             </Avatar>
           </div>
 
-          <div className="flex flex-col px-2 w-full">
+          <div className="flex-1">
             <div className="flex justify-between items-center">
               <h3 className="text-[#28303F] text-sm lg:text-2xl font-medium truncate max-w-[120px] lg:max-w-none">
                 {name}
@@ -42,6 +38,8 @@ const FriendCard = ({
                     Active {lastActive}
                   </p>
                 )}
+
+                {/* for tribe  */}
                 { pin && (
                   <div className='flex gap-5'>
                     <Image className='cursor-pointer rounded-full  ' src={pin} alt="pin" width={25} height={25} />
@@ -60,6 +58,8 @@ const FriendCard = ({
               <span className="px-2 py-0.5 rounded-full bg-[#28303F14] text-[#828282] text-xs lg:text-sm">
                 Level {level}
               </span>
+
+
               {points && (
                 <span className="px-2 py-0.5 rounded-full text-[#5E8DE5] text-xs lg:text-sm">
                   {points} Points
