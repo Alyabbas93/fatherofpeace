@@ -2,14 +2,12 @@
 
 
 
-import { Button } from "@/components/ui/button";
-import { Plus } from "lucide-react";
+
 import React, { useState } from "react";
 import SocialLayout from "../socialLayout";
-import { Search} from "lucide-react";
 import SocialHeader from "@/components/social/social-header";
 import SocialTribesCard from "@/components/social/socialTribesCard";
-import CreateTribe from "@/components/social/createTribe";
+
 
 
 
