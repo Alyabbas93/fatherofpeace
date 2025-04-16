@@ -36,12 +36,18 @@ const Asktrumother = () => {
   </div>
   <div>
   <Dialog>
-  <DialogTrigger>
-  <button className="flex items-center gap-2 bg-[#5E8DE5] text-white text-[16px] font-medium px-4 py-4 rounded-lg text-lg font-medium hover:bg-blue-600 transition">
+  <DialogTrigger asChild>
+  <Button className="flex w-[204px] h-[59px] px-[15px] py-[17px] items-center gap-2 shrink-0 cursor-pointer rounded-[10px]  bg-[#5E8DE5] text-white  hover:bg-blue-600 transition ">
       <BellDot size={20} />
       Get Daily Quotes
-    </button>
+    </Button>
   </DialogTrigger>
+  {/* <DialogTrigger>
+  <Button className="flex items-center gap-2 bg-[#5E8DE5] text-white text-[16px] md:px-4 md:py-4 rounded-lg text-lg font-medium hover:bg-blue-600 transition">
+      <BellDot size={20} />
+      Get Daily Quotes
+    </Button>
+  </DialogTrigger> */}
   <DialogContent >
    <SubscribePopup/>
   </DialogContent>
