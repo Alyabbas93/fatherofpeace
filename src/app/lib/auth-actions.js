@@ -3,12 +3,13 @@
 import { revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";
 
-import { createClient } from "../../utils/supabase/server";
+import { createSupabaseClient } from "../../utils/supabase/server";
+
 
 export async function login(formData) {
-  const supabase =  createClient();
+  const supabase = await  createSupabaseClient();
 
-  console.log("creatinglcieng = = =",createClient); // Should log the function definition
+  console.log("creatinglcieng = = =",createSupabaseClient); // Should log the function definition
 
   const data = {
     email: formData.get("email"),
@@ -26,7 +27,7 @@ export async function login(formData) {
 }
 
 export async function signup(formData) {
-  const supabase = createClient();
+  const supabase = await createSupabaseClient();
 
   console.log("Supabase client:", supabase);
 console.log("Supabase auth:", supabase.auth);

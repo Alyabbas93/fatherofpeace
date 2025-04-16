@@ -46,7 +46,7 @@ const initialState = {
       pin: "/assets/social/pin.svg",
       dots: "/assets/social/more-vertical.svg",
     },
-    // ... other people
+   
   ],
   friendRequests: [
     {
