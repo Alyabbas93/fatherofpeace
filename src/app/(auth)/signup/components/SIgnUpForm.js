@@ -22,7 +22,7 @@ export function SignUpForm() {
         </CardDescription>
       </CardHeader>
       <CardContent>
-        <form action="">
+        <form action={signup}>
           <div className="grid gap-4">
             <div className="grid grid-cols-2 gap-4">
               <div className="grid gap-2">
@@ -30,7 +30,7 @@ export function SignUpForm() {
                 <Input
                   name="first-name"
                   id="first-name"
-                  placeholder="Max"
+                  placeholder="David"
                   required
                 />
               </div>
@@ -39,7 +39,7 @@ export function SignUpForm() {
                 <Input
                   name="last-name"
                   id="last-name"
-                  placeholder="Robinson"
+                  placeholder="Khan"
                   required
                 />
               </div>
@@ -56,7 +56,7 @@ export function SignUpForm() {
             </div>
             <div className="grid gap-2">
               <Label htmlFor="password">Password</Label>
-              <Input name="password" id="password" type="password" />
+              <Input name="password" id="password" type="password" required />
             </div>
             <Button formAction={signup} type="submit" className="w-full">
               Create an account

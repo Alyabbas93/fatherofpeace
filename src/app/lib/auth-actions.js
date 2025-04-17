@@ -2,12 +2,11 @@
 
 import { revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";
-
 import { createSupabaseClient } from "../../utils/supabase/server";
 
 
 export async function login(formData) {
-  const supabase = await  createSupabaseClient();
+  const supabase =  createSupabaseClient();
 
   console.log("creatinglcieng = = =",createSupabaseClient); // Should log the function definition
 
@@ -57,7 +56,7 @@ console.log("Supabase auth:", supabase.auth);
 }
 
 export async function signout() {
-  const supabase = createClient();
+  const supabase = await createSupabaseClient();
   const { error } = await supabase.auth.signOut();
 
   if (error) {
@@ -69,7 +68,7 @@ export async function signout() {
 }
 
 export async function signInWithGoogle() {
-  const supabase = createClient();
+  const supabase = createSupabaseClient();
   const { data, error } = await supabase.auth.signInWithOAuth({
     provider: "google",
     options: {
