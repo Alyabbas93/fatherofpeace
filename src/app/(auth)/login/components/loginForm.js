@@ -97,8 +97,10 @@ export function LoginForm() {
         <div className="mt-2 text-[#929292] text-center text-sm">
           Don’t have an account?{" "}
           <Link href="/signup" className="underline font-medium">
-            Get started here
-          </Link>
+  Get started here
+</Link>
+
+
         </div>
         {/* Divider */}
         <div className="flex items-center my-6">
@@ -112,16 +114,12 @@ export function LoginForm() {
   <Button variant="outline" size="icon" className="rounded-full">
     <Facebook className="h-5 w-5" />
   </Button>
-  <Button variant="outline" size="icon" className="rounded-full">
-    <Globe className="h-5 w-5" />
-   
-  </Button>
-  {/* <SignInWithGoogleButton/>  */}
+  
+  <SignInWithGoogleButton/> 
 </div>
 
 
-        {/* Bottom Signup Text */}
-       
+
       </CardContent>
     </Card>
   );

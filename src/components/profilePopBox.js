@@ -1,9 +1,11 @@
+"use client";
+
 import React, { useEffect, useState } from "react";
-import { Home, User, Bell, Award, LogOut } from "lucide-react";
+import { Home, User, Bell, Award } from "lucide-react";
 import { Popover, PopoverTrigger, PopoverContent } from "@/components/ui/popover";
-import { Button } from "@/components/ui/button";
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 import LoginButton from "./LoginLogoutButton";
+import { createClient } from "@/app/lib/supabase-browser";
 
 const menuItems = [
   { name: "Profile Setting", icon: <Home size={16} />, key: "Profile Setting" },
@@ -15,21 +17,48 @@ const menuItems = [
 const ProfilePopper = () => {
   const [active, setActive] = useState("Profile Setting");
   const [storedImage, setStoredImage] = useState(null);
+  const [storedName, setStoredName] = useState(null);
 
   useEffect(() => {
-    const image = localStorage.getItem("profileImage");
-    if (image) {
-      setStoredImage(image);
-    }
+    const fetchProfile = async () => {
+      const supabase = createClient();
+      const { data, error } = await supabase.auth.getUser();
+
+      if (data?.user) {
+        const avatar = data.user.user_metadata?.avatar_url;
+        const fullName = data.user.user_metadata?.full_name;
+
+        if (avatar) {
+          localStorage.setItem("profileImage", avatar);
+          setStoredImage(avatar);
+        }
+        if (fullName) {
+          localStorage.setItem("fullName", fullName);
+          setStoredName(fullName);
+        }
+      } else {
+        const localAvatar = localStorage.getItem("profileImage");
+        const localName = localStorage.getItem("fullName");
+        if (localAvatar) setStoredImage(localAvatar);
+        if (localName) setStoredName(localName);
+      }
+
+      if (error) {
+        console.error("Failed to fetch user:", error.message);
+      }
+    };
+
+    fetchProfile();
   }, []);
 
   return (
     <Popover>
       <PopoverTrigger asChild>
-      <Avatar className="cursor-pointer">
-          <AvatarImage src={storedImage} alt="User" />
-  
-          <AvatarFallback>U</AvatarFallback>
+        <Avatar className="cursor-pointer">
+          <AvatarImage src={storedImage || ""} alt="User" />
+          <AvatarFallback>
+            {storedName ? storedName.charAt(0) : "U"}
+          </AvatarFallback>
         </Avatar>
       </PopoverTrigger>
 
@@ -51,11 +80,7 @@ const ProfilePopper = () => {
           ))}
         </ul>
 
-        {/* <Button variant="outline" className="w-full mt-4 flex items-center gap-2 text-gray-700">
-          <LogOut size={16} />
-          Log out
-        </Button> */}
-        <LoginButton/>
+        <LoginButton />
       </PopoverContent>
     </Popover>
   );
