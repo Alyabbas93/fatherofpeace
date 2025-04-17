@@ -5,6 +5,7 @@ import { SidebarProvider } from "@/components/ui/sidebar"
 import { AppSidebar } from "@/components/sidebar"
 import Header from "@/components/header"
 import { Providers } from "./providers" // Import the Redux Providers
+import AuthLayout from "@/components/authLayout/authLayout"
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -25,20 +26,14 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body suppressHydrationWarning className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
-        {/* Wrap everything with Redux Providers */}
+        
         <Providers>
-          <div className="flex bg-[#f8f8f8]">
-            <SidebarProvider>
-              <AppSidebar className="relative" />
-              <main className="w-[100%]">
-                <div className="flex">
-                  <Header />
-                </div>
-                {children}
-              </main>
-            </SidebarProvider>
-          </div>
+
+          <AuthLayout children={children}/>
+  
+          
         </Providers>
+        
       </body>
     </html>
   )
