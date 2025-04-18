@@ -1,3 +1,4 @@
+import { createClient } from "@/utils/supabase/client";
 import React, { useState, useEffect } from "react";
 
 const userData = {
@@ -17,13 +18,53 @@ const userData = {
 
 const ProfileCard = () => {
   const [storedImage, setStoredImage] = useState(null);
+  const [storedName, setStoredName] = useState(null);
 
   useEffect(() => {
-    if (typeof window !== "undefined") {
-      const image = localStorage.getItem("profileImage");
-      setStoredImage(image); // Set the image to state once client-side
+
+    const fetchProfile = async () => {
+      const supabase = createClient();
+      const {data ,error } = await supabase.auth.getUser();
+
+
+      if(data?.user){
+        const avatar = data.user.user_metadata?.avatar_url;
+        const fullName = data.user.user_metadata?.full_name;
+        const email = data.user.email;
+     
+
+      if (avatar){
+        localStorage.setItem("profileImage", avatar);
+        setStoredImage(avatar);
+
+      }
+
+      if (fullName){
+        localStorage.setItem("fullName", fullName);
+        setStoredName(fullName);
+        console.log("Full Name: ", storedName);
+      }
+
+
+
+      }
+      else{
+        const localAvatar = localStorage.getItem("profileImage");
+        const localName  = localStorage.getItem("fullName");
+        if(localAvatar) setStoredImage(localAvatar);
+        if(localName) setStoredName(localName);
+      }
+
+
     }
+
+    
+
+    fetchProfile();
   }, []);
+
+  console.log(storedName);
+  
 
   return (
     <div className="mx-auto mb-9 border-b border-[#28303F0F] pb-12 py-5">
@@ -40,7 +81,7 @@ const ProfileCard = () => {
         </div>
 
         <div className="flex flex-col w-full">
-          <h2 className="text-[28px] font-medium text-[#28303F]">{userData.name}</h2>
+          <h2 className="text-[28px] font-medium text-[#28303F]">{storedName}</h2>
           <p className="text-[#828282] font-normal text-[14px]">{userData.role}</p>
           <div className="flex text-[#5E8DE5] gap-4 mt-3">
             <button className="px-6 py-1 flex items-center justify-center text-xs bg-[#28303F14] rounded-full h-[19px]">

@@ -3,7 +3,7 @@
 
 import { useEffect, useState } from "react";
 import { createClient } from "@/utils/supabase/client";
-import Login from "@/app/(auth)/login/page";
+import { useRouter } from "next/navigation";
 import { SidebarProvider } from "@/components/ui/sidebar";
 import { AppSidebar } from "@/components/sidebar";
 import Header from "@/components/header";
@@ -12,21 +12,41 @@ export default function AuthLayout({ children }) {
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
   const supabase = createClient();
+  const router = useRouter();
 
   useEffect(() => {
-    const getUser = async () => {
-      const { data: { user } } = await supabase.auth.getUser();
+    const checkAuth = async () => {
+      const { data: { user }, error } = await supabase.auth.getUser();
+      
+      if (error || !user) {
+        router.push("/login");
+        return;
+      }
+      
       setUser(user);
       setLoading(false);
     };
 
-    getUser();
-  }, []);
+    checkAuth();
 
-  if (loading) return <div className="text-center mt-20">Loading...</div>;
+    const { data: { subscription } } = supabase.auth.onAuthStateChange(
+      (event, session) => {
+        if (event === "SIGNED_OUT") {
+          router.push("/login");
+        }
+        setUser(session?.user ?? null);
+      }
+    );
 
-  if (!user) {
-    return <Login />;
+    return () => subscription?.unsubscribe();
+  }, [router]);
+
+  if (loading) {
+    return (
+      <div className="flex items-center justify-center h-screen">
+        <div className="text-center">Loading...</div>
+      </div>
+    );
   }
 
   return (
