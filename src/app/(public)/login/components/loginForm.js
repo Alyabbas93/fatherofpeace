@@ -12,10 +12,11 @@ import {
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Checkbox } from "@/components/ui/checkbox";
-import { login } from "@/app/lib/auth-actions";
+import { login, signup } from "@/app/lib/auth-actions";
 import { Eye, Facebook,  Globe } from "lucide-react";
 import { useState } from "react";
 import SignInWithGoogleButton from "./SignInWithGoogleButton";
+import SignUpPage from "../../signup/page";
 ;
 
 export function LoginForm() {
@@ -111,8 +112,8 @@ export function LoginForm() {
 
         {/* Social Buttons */}
         <div className="flex justify-center gap-6">
-  <Button variant="outline" size="icon" className="rounded-full">
-    <Facebook className="h-5 w-5" />
+  <Button variant="outline" size="icon" className="rounded-full  bg-black hover:bg-gray-800 cursor-pointer">
+    <Facebook className="h-5 w-5 " color="white" />
   </Button>
   
   <SignInWithGoogleButton/> 

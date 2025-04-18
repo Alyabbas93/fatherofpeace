@@ -73,7 +73,7 @@ const ProfilePopper = () => {
           <Avatar className="h-10 w-10">
             <AvatarImage src={storedImage || ""} alt="User" />
             <AvatarFallback>
-              {storedName ? storedName.charAt(0) : "U"}
+              {storedName ? storedName.charAt(0) : "A"}
             </AvatarFallback>
           </Avatar>
           <div>

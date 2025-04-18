@@ -4,7 +4,7 @@
 
 import { useEffect, useState } from "react";
 import { createClient } from "@/utils/supabase/client";
-import Login from "@/app/(auth)/login/page"; // Adjust path if needed
+import Login from "@/app/(public)/login/page"; // Adjust path if needed
 import { SidebarProvider } from "@/components/ui/sidebar";
 import { AppSidebar } from "@/components/sidebar";
 import Header from "@/components/header";
