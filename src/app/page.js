@@ -1,18 +1,15 @@
-// import { useState } from "react";
-import Dashboard from "./dashboard/page";
+"use client";
+
+import { useEffect } from "react";
+import { usePathname, useRouter } from "next/navigation";
 
 export default function Home() {
+  const router = useRouter();
+  const pathname = usePathname();
 
-  // const [loading, setLoading] = useState(); 
+  useEffect(() => {
+    router.push("/login");
+  }, [router]);
 
-
-  return (
-    <div className="flex  min-h-screen w-[100%] ">
-      <Dashboard />
-    </div>
-  );
+  return <div className="w-screen h-screen bg-white"></div>;
 }
-
-
-
-

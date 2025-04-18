@@ -11,14 +11,14 @@ const Login = () => {
   const supabase = createClient()
 
   useEffect(() => {
-    const checkAuth = async () => {
-      const {
-        data: { user },
-      } = await supabase.auth.getUser()
-      if (user) router.push("/dashboard")
-    }
-    checkAuth()
-  }, [router])
+    const checkSession = async () => {
+      const { data: { user } } = await supabase.auth.getUser();
+      if (user) {
+        router.push("/dashboard");
+      }
+    };
+    checkSession();
+  }, [router]);
 
   return (
     <div className="flex h-svh">

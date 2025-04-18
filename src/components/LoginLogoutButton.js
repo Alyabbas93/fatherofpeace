@@ -10,6 +10,12 @@ const LoginButton = () => {
   const [user, setUser] = useState(null);
   const router = useRouter();
   const supabase = createClient();
+
+
+
+
+
+  
   useEffect(() => {
     const fetchUser = async () => {
       const {

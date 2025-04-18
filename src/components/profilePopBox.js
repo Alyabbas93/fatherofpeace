@@ -30,9 +30,12 @@ const ProfilePopper = () => {
         const fullName = data.user.user_metadata?.full_name;
         const email = data.user.email;
 
+        console.log( "ddddddddddduser" ,  user)
+
         if (avatar) {
           localStorage.setItem("profileImage", avatar);
           setStoredImage(avatar);
+          console.log( "ddddddddddduser" ,  user)
         }
         if (fullName) {
           localStorage.setItem("fullName", fullName);

@@ -1,6 +1,5 @@
 // app/(auth)/layout.jsx
 "use client";
-
 import { useEffect, useState } from "react";
 import { createClient } from "@/utils/supabase/client";
 import { useRouter } from "next/navigation";
@@ -15,6 +14,7 @@ export default function AuthLayout({ children }) {
   const router = useRouter();
 
   useEffect(() => {
+    // Check auth state
     const checkAuth = async () => {
       const { data: { user }, error } = await supabase.auth.getUser();
       
@@ -29,6 +29,7 @@ export default function AuthLayout({ children }) {
 
     checkAuth();
 
+    // Listen for auth changes
     const { data: { subscription } } = supabase.auth.onAuthStateChange(
       (event, session) => {
         if (event === "SIGNED_OUT") {
