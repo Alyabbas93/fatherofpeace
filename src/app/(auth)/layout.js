@@ -1,5 +1,6 @@
 // app/(auth)/layout.jsx
 "use client";
+import { SessionContextProvider } from "@supabase/auth-helpers-react";
 import { useEffect, useState } from "react";
 import { createClient } from "@/utils/supabase/client";
 import { useRouter } from "next/navigation";
@@ -17,6 +18,14 @@ export default function AuthLayout({ children }) {
     // Check auth state
     const checkAuth = async () => {
       const { data: { user }, error } = await supabase.auth.getUser();
+
+      const path = window.location.pathname
+
+        if((path === "/login" || path === "/signup") && (!user || error)){
+          setLoading(false);
+          return;
+        }
+
       
       if (error || !user) {
         router.push("/login");
@@ -51,14 +60,12 @@ export default function AuthLayout({ children }) {
   }
 
   return (
-    <div className="flex bg-[#f8f8f8]">
-      <SidebarProvider>
-        <AppSidebar className="relative" />
-        <main className="w-full">
-          <Header />
-          {children}
-        </main>
-      </SidebarProvider>
-    </div>
+   <SessionContextProvider
+   initailSession={session}>
+    {
+      loading ? <div>Loading ... </div> : <>{children}</>
+    }
+
+   </SessionContextProvider>
   );
 }
