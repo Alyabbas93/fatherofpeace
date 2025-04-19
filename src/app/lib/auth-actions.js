@@ -8,8 +8,7 @@ import { createSupabaseClient } from "../../utils/supabase/server";
 export async function login(formData) {
   const supabase =  createSupabaseClient();
 
-  console.log("creatinglcieng = = =",createSupabaseClient); // Should log the function definition
-
+  console.log("creatinglcieng ===",createSupabaseClient);
   const data = {
     email: formData.get("email"),
     password: formData.get("password"),
@@ -50,7 +49,7 @@ console.log("Supabase auth:", supabase.auth);
   if (error) {
     redirect("/error");
   }
-
+  console.log("error in signup :", error);
   revalidatePath("/", "layout");
   redirect("/");
 }
