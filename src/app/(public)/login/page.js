@@ -10,7 +10,7 @@ const Login = () => {
   const router = useRouter()
   const supabase = createClient()
 
-  useEffect(() => {
+   useEffect(() => {
     const checkSession = async () => {
       const { data: { user } } = await supabase.auth.getUser();
       if (user) {
