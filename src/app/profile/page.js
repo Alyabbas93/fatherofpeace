@@ -13,10 +13,10 @@ const ProfilePage = () => {
       <div className='flex items-center justify-between flex-wrap gap-3'>
         <h1 className="text-[40px] text-[#28303F] font-semibold">Profile</h1>
         <div className="flex items-center gap-4">
-          <button className="p-2 rounded-full bg-transparent hover:bg-gray-200 transition">
+          <button className="p-2 rounded-full bg-transparent hover:bg-gray-200 transition cursor-pointer">
             <Share2 className="w-5 h-5 text-gray-600" />
           </button>
-          <button className="flex items-center gap-2 bg-[#5E8DE5] text-white px-3 py-2 rounded-md font-medium hover:bg-blue-600 transition">
+          <button className="flex items-center gap-2 bg-[#5E8DE5] text-white px-3 py-2 rounded-md font-medium hover:bg-blue-600 transition cursor-pointer">
             <Edit className="w-6 h-9" />
             Edit profile
           </button>

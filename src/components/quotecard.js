@@ -40,11 +40,11 @@ export default function QuoteCard() {
 
   <div className="flex items-center space-x-3">
   <div className="flex items-center space-x-3">
-  <button className="flex items-center justify-center h-[38px] w-[115px] text-[16px] font-medium border border-[#28303F] text-black rounded-md hover:bg-gray-100">
+  <button className=" cursor-pointer flex items-center justify-center h-[38px] w-[115px] text-[16px] font-medium border border-[#28303F] text-black rounded-md hover:bg-gray-100">
     <Share2 className="h-5 w-5 mr-2" /> 
     <span>Share</span>
   </button>
-  <button className="flex items-center justify-center h-[38px] w-[115px] text-[16px] font-medium bg-[#5E8DE5] text-white rounded-md hover:bg-blue-700">
+  <button className=" cursor-pointer flex items-center justify-center h-[38px] w-[115px] text-[16px] font-medium bg-[#5E8DE5] text-white rounded-md hover:bg-blue-700">
     <MessageCircle size={28}  className="h-5 w-5 mr-2" /> 
     
     

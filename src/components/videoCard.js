@@ -51,7 +51,7 @@ export default function VideoCard() {
       </div>
 
    
-      <button className="mt-3 w-full flex items-center mb-4 justify-center gap-4 text-[12px] border border-[#28303F] rounded-md py-3 hover:bg-gray-100">
+      <button className="mt-3  cursor-pointer w-full flex items-center mb-4 justify-center gap-4 text-[12px] border border-[#28303F] rounded-md py-3 hover:bg-gray-100">
         <span className="mr-1 flex item-center"><ChevronRight size={24} strokeWidth={1.25} /></span> 
         <span className="text-[14px] font-normal">View More Videos</span>
       </button>
