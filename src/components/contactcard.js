@@ -14,7 +14,7 @@ export default function Contactcard() {
           <p className="text-[#828282] text-[14px] font-normal">People to share blessings with</p>
         </div>
     
-        <button className="w-10 h-10 flex items-center justify-center bg-[#232938] rounded-lg">
+        <button className="w-10 h-10 flex items-center justify-center bg-[#232938] rounded-lg cursor-pointer">
   <Plus className="w-5 h-5 text-white" />
 </button>
 
@@ -33,7 +33,7 @@ export default function Contactcard() {
           </button>
         </div>
       ))}
-       <button className="w-full flex items-center justify-center gap-2 bg-[#5f91f2] text-white py-2 rounded-lg mt-4 text-sm font-medium shadow-md">
+       <button className="cursor-pointer w-full flex items-center justify-center gap-2 bg-[#5f91f2] text-white py-2 rounded-lg mt-4 text-sm font-medium shadow-md">
         <Mail className="w-5  " /> Import From Gmail
       </button>
     </div>
