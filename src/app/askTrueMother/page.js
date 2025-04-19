@@ -37,10 +37,10 @@ const Asktrumother = () => {
   <div>
   <Dialog>
   <DialogTrigger asChild>
-  <Button className="flex w-[204px] h-[59px] px-[15px] py-[17px] items-center gap-2 shrink-0 cursor-pointer rounded-[10px]  bg-[#5E8DE5] text-white  hover:bg-blue-600 transition ">
+  <button  className="flex w-[204px] h-[59px] px-[15px] py-[17px] items-center gap-2 shrink-0 cursor-pointer rounded-[10px]  bg-[#5E8DE5] text-white  hover:bg-blue-600 transition ">
       <BellDot size={20} />
       Get Daily Quotes
-    </Button>
+    </button>
   </DialogTrigger>
   {/* <DialogTrigger>
   <Button className="flex items-center gap-2 bg-[#5E8DE5] text-white text-[16px] md:px-4 md:py-4 rounded-lg text-lg font-medium hover:bg-blue-600 transition">
@@ -92,7 +92,7 @@ const Asktrumother = () => {
                   <div className="flex gap-4 flex-wrap">
                   <Button
   variant="outline"
-  className="flex items-center gap-2 border border-[#28303F] text-[#28303F]"
+  className="flex items-center gap-2 border border-[#28303F] text-[#28303F] cursor-pointer"
 >
   <Video size={20} strokeWidth={1.25} stroke="#28303F" />
   Family Value Address
@@ -101,7 +101,7 @@ const Asktrumother = () => {
 
 <Button
   variant="outline"
-  className="flex items-center gap-2 border border-[#28303F] text-[#28303F]"
+  className="flex items-center gap-2 border border-[#28303F] text-[#28303F] cursor-pointer"
 >
   <BookOpen size={20} strokeWidth={1.25} stroke="#28303F" />
   Family Value Address

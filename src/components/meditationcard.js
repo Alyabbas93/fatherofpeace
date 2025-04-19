@@ -70,7 +70,7 @@ export default function MeditationCard() {
       </div>
 
       <button
-        className="mt-4 bg-[#5E8DE5] w-full text-white py-2.5 rounded-md flex items-center justify-center space-x-2"
+        className="mt-4 cursor-pointer bg-[#5E8DE5] w-full text-white py-2.5 rounded-md flex items-center justify-center space-x-2"
         onClick={togglePlay}
       >
         {isPlaying ? <Pause className="h-4 w-4 text-white" /> : <Play className="h-4 w-4 text-white" />}

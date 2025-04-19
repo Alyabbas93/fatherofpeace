@@ -11,7 +11,7 @@ const JourneyTabs = ({ tabs }) => {
               <TabsTrigger
                 key={value}
                 value={value}
-                className="data-[state=active]:bg-white data-[state=active]:text-black 
+                className="data-[state=active]:bg-white data-[state=active]:text-black cursor-pointer
                            px-4 py-2 rounded-full text-white transition flex-1 text-center"
               >
                 {label}
