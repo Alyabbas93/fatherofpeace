@@ -1,5 +1,7 @@
 "use client"
 
+
+
 const tribes = [
     {
       id: 1,

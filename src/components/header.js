@@ -40,8 +40,8 @@ const Header = () => {
       <div className="flex items-center gap-6">
         <InboxPopover />
 
-        <Sun color="oklch(0.45 0.03 255.8 / 1)" className="cursor-pointer" />
-        <Languages color="oklch(0.45 0.03 255.8 / 1)" className="cursor-pointer"/>
+        <Sun className="text-gray-600 cursor-pointer hover:text-black" />
+        <Languages className="text-gray-600 cursor-pointer hover:text-black" />
         <NotificationPopover />
 
         <ProfilePopper />
