@@ -45,7 +45,7 @@ const tribes = [
                 <p className="text-xs sm:text-sm text-gray-600">
                   {tribe.description}
                 </p>
-                <button className="mt-2 border border-[#28303F] px-1 sm:px-3 py-0.5 sm:py-1 rounded-[3px] text-sm text-black hover:bg-gray-100">
+                <button className="mt-2 border cursor-pointer border-[#28303F] px-1 sm:px-3 py-0.5 sm:py-1 rounded-[3px] text-sm text-black hover:bg-gray-100">
                   + Join
                 </button>
               </div>
@@ -54,7 +54,7 @@ const tribes = [
         </div>
   
         {/* Discover More Button */}
-        <button className="mt-4 w-full border border-[#28303F] text-sm sm:text-normal py-1 sm:py-2 rounded-[7px] text-black font-[400] hover:bg-gray-100">
+        <button className="mt-4 w-full border cursor-pointer border-[#28303F] text-sm sm:text-normal py-1 sm:py-2 rounded-[7px] text-black font-[400] hover:bg-gray-100">
           Discover More Tribes
         </button>
       </div>

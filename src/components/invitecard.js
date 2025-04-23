@@ -34,7 +34,7 @@ export default function InviteFriends() {
   />
   <Button
     onClick={handleCopy}
-    className="bg-white border border-[#28303F] text-black px-4 py-2 flex items-center"
+    className="bg-white border cursor-pointer  border-[#28303F] text-black px-4 py-2 flex items-center"
   >
     <Upload  className="h-5 w-5 text-black" />
     {copied ? " Copied!" : " Copy"}
